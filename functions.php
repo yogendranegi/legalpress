@@ -116,10 +116,10 @@ function legalpress_setup() {
 	endif;
 
 	// Add support for responsive embeds.
-    add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'responsive-embeds' );
 
-    // Add support for automatic feed links.
-    add_theme_support( 'automatic-feed-links' );
+	// Add support for automatic feed links.
+	add_theme_support( 'automatic-feed-links' );
 
 	/**
 	 * LegalPress custom posts image size
