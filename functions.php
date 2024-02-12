@@ -91,9 +91,9 @@ function legalpress_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary'	=> esc_html__( 'Primary', 'legalpress' ),
+		'primary'	=> esc_html__('Primary', 'legalpress'),
 		'footer'	=> esc_html__('Footer', 'legalpress'),
-		'social'	=> esc_html__('Sidebar Social'),
+		'social'	=> esc_html__('Sidebar Social', 'legalpress'),
 		'foote-social'	=> esc_html__('Footer Social', 'legalpress'),
 	) );
 
@@ -130,6 +130,11 @@ function legalpress_setup() {
 
 	// Add support for automatic feed links.
 	add_theme_support( 'automatic-feed-links' );
+	
+	/**
+	 * LegalPress theme info
+	 */
+	require get_template_directory() . '/inc/theme-info.php';
 
 	/**
 	 * LegalPress custom posts image size
@@ -144,17 +149,43 @@ function legalpress_setup() {
 	/*
 	* About page instance
 	*/
-	if(is_admin()) {
-		require get_template_directory() . '/inc/theme-info.php';
-		$config = array();
-		LegalPress_About_Page::legalpress_init( $config );
-	}
+	// if(is_admin()) {
+	// 	require get_template_directory() . '/inc/theme-info.php';
+	// 	$config = array();
+	// 	LegalPress_About_Page::legalpress_init( $config );
+	// }
 
 }
 endif;
 add_action( 'after_setup_theme', 'legalpress_setup' );
 
 
+/**
+* Custom Logo 
+*
+*/
+function legalpress_logo_setup() {
+    add_theme_support( 'custom-logo', array(
+	   'height'      => 65,
+	   'width'       => 350,
+	   'flex-height' => true,
+	   'flex-width' => true,	   
+	) );
+}
+add_action( 'after_setup_theme', 'legalpress_logo_setup' );
+
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function legalpress_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'legalpress_content_width', 640 );
+}
+add_action( 'after_setup_theme', 'legalpress_content_width', 0 );
 
 /**
  * Register widget area.
@@ -198,8 +229,67 @@ function legalpress_widgets_init() {
     }
 }
 
+/*
+ *Add Footer 1,2,3,4 seperately
+ * 
+function legalpress_widgets_init() {
+    // Footer 1
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer 1', 'legalpress' ),
+        'id'            => 'footer-1',
+        'description'   => esc_html__( 'Add widgets here.', 'legalpress' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // Footer 2
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer 2', 'legalpress' ),
+        'id'            => 'footer-2',
+        'description'   => esc_html__( 'Add widgets here.', 'legalpress' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // Footer 3
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer 3', 'legalpress' ),
+        'id'            => 'footer-3',
+        'description'   => esc_html__( 'Add widgets here.', 'legalpress' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    // Footer 4
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer 4', 'legalpress' ),
+        'id'            => 'footer-4',
+        'description'   => esc_html__( 'Add widgets here.', 'legalpress' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+*/
+
 add_action( 'widgets_init', 'legalpress_widgets_init' );
 
+/**
+* Admin Scripts
+*/
+if ( ! function_exists( 'legalpress_admin_scripts' ) ) :
+	function legalpress_admin_scripts($hook) {
+		  wp_enqueue_style( 'legalpress-info-css', get_template_directory_uri() . '/css/legalpress-theme-info.css', false ); 
+	}
+	endif;
+	add_action( 'admin_enqueue_scripts', 'legalpress_admin_scripts' );
 
 
 /**
