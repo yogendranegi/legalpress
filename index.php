@@ -12,7 +12,8 @@
  * @package legalpress
  */
 
-get_header(); ?>
+get_header(); 
+?>
 
 <div id="primary" class="<?php echo esc_attr(get_theme_mod('legalpress_header_menu_style','style1')); ?> content-area">
 	<div id="main" class="site-main" role="main">
