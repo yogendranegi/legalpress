@@ -14,16 +14,23 @@
 // Core Constants
 define('LEGALPRESS_REQUIRED_PHP_VERSION', '5.6' );
 define('LEGALPRESS_DIR_PATH', get_template_directory());
-define('LEGALPRESS_THEME_AUTH','#');
+define('LEGALPRESS_THEME_AUTH','https://www.spiraclethemes.com/');
 define('LEGALPRESS_DIR_URI', get_template_directory_uri());
 define('LEGALPRESS_MINIFY', get_theme_mod('legalpress_enable_minify_styles_scripts',true));
+define('LEGALPRESS_THEME_URL','https://www.spiraclethemes.com/legalpress-free-wordpress-theme/');
+define('LEGALPRESS_THEME_PRO_URL','https://www.spiraclethemes.com/legalpress-pro-addons/');
+define('LEGALPRESS_THEME_DOC_URL','https://www.spiraclethemes.com/LEGALPRESS-documentation/');
+define('LEGALPRESS_THEME_VIDEOS_URL','https://www.spiraclethemes.com/legalpress-video-tutorials/');
+define('LEGALPRESS_THEME_SUPPORT_URL','https://wordpress.org/support/theme/legalpress/');
+define('LEGALPRESS_THEME_RATINGS_URL','https://wordpress.org/support/theme/legalpress/reviews/');
+define('LEGALPRESS_THEME_CHANGELOGS_URL','https://themes.trac.wordpress.org/log/legalpress/');
+define('LEGALPRESS_THEME_CONTACT_URL','https://www.spiraclethemes.com/contact/');
 
 //Register Required plugin
 require_once(get_template_directory() .'/inc/class-tgm-plugin-activation.php');
 
 /**
 * Check for minimum PHP version requirement 
-*
 */
 function legalpress_check_theme_setup( $oldtheme_name, $oldtheme ) {
 	// Compare versions.
@@ -84,7 +91,10 @@ function legalpress_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'legalpress' ),
+		'primary'	=> esc_html__( 'Primary', 'legalpress' ),
+		'footer'	=> esc_html__('Footer', 'legalpress'),
+		'social'	=> esc_html__('Sidebar Social'),
+		'foote-social'	=> esc_html__('Footer Social', 'legalpress'),
 	) );
 
 	/*
@@ -134,12 +144,11 @@ function legalpress_setup() {
 	/*
 	* About page instance
 	*/
-	/*if(is_admin()) {
+	if(is_admin()) {
 		require get_template_directory() . '/inc/theme-info.php';
 		$config = array();
 		LegalPress_About_Page::legalpress_init( $config );
 	}
-	*/
 
 }
 endif;
@@ -175,7 +184,20 @@ function legalpress_widgets_init() {
         ) );
     endif;
 
+	// New footer widget areas
+    for ($i = 1; $i <= 4; $i++) {
+        register_sidebar( array(
+            'name'          => esc_html__( 'Footer ' . $i, 'legalpress' ),
+            'id'            => 'footer-' . $i,
+            'description'   => esc_html__( 'Add widgets here to display in Footer ' . $i, 'legalpress' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="widget-title">',
+            'after_title'   => '</h4>',
+        ) );
+    }
 }
+
 add_action( 'widgets_init', 'legalpress_widgets_init' );
 
 
