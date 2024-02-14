@@ -118,4 +118,4 @@ legalpress_after_title();
 
 <?php 
 
-get_foote();
+get_footer();
