@@ -1,4 +1,4 @@
-<?phtheme-info.phpp
+<?php
 /**
  * The sidebar containing the main widget area.
  *
