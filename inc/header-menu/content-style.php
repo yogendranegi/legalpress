@@ -4,7 +4,7 @@
  * 
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package blogson
+ * @package legalpress
  */
 
  ?>
@@ -98,7 +98,7 @@
                         endif;
                     ?>
                 </div>
-                <nav class="top-menu" role="navigation" aria-label="<?php esc_attr_e('primary', 'blogson' ); ?>">
+                <nav class="top-menu" role="navigation" aria-label="<?php esc_attr_e('primary', 'legalpress' ); ?>">
                     <div class="menu-header">
                         <span><?php esc_html_e('MENU','legalpress'); ?> </span>
                         <button type="button" class="hd-bar-opener navbar-toggle collapsed"data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">

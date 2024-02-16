@@ -6,16 +6,16 @@
  * 
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package blogson
+ * @package legalpress
  */
 
  ?><!DOCTYPE html>
  <html <?php language_attributes(); ?>>
- <head?>
+ <head>
     <meta charset="<php bloginfo('charset'); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="profile" href="http://gmpg.org/xfn/11">
-        <?php wp_head(); ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <?php wp_head(); ?>
 </head>
 
 <body> <?php body_class('at-sticky-sidebar');?>>
@@ -27,7 +27,7 @@
         }
     ?>
     <?php 
-        if(true===get_theme_mod('legalpress_enable_preloader',true)){
+        /*if(true===get_theme_mod('legalpress_enable_preloader',true)){
             ?>
                 <!-- Begin Preloader -->
                 <div class="loader-wrapper lds-flickr">
@@ -37,7 +37,7 @@
                 </div>
                 <!-- End Preloader -->
             <?php 
-        }
+        }*/
     ?>
     <!-- Header Styles -->
     <?php 
