@@ -119,3 +119,4 @@ legalpress_after_title();
 <?php 
 
 get_footer();
+?>
