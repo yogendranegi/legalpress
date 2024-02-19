@@ -8,7 +8,7 @@
  * Header
  */
 
- if ( ! function_exists( 'legalpress_header_menu_styhles' ) ) :
+ if ( ! function_exists( 'legalpress_header_menu_styles' ) ) :
 function legalpress_header_menu_styles() {
     get_template_part( 'inc/header-menu/content',esc_html(get_theme_mod('legalpress_header_menu_styles','style1')));
 }
@@ -58,15 +58,16 @@ add_action( 'legalpress_action_footer', 'legalpress_footer_copyrights' );
 /**
  * Custom excerpt length.
  */
-if ( ! function_exists( 'legalpress_my_excerpt_length' ) ) :
+if ( ! function_exists( 'legalpress_excerpt_length' ) ) :
 function legalpress_excerpt_length($length) {
     if ( is_admin() ) {
         return $length;
     }
-    return absint(get_theme_mod('legalpress_posts_excerpt_length'.,70));
+    return absint(get_theme_mod('legalpress_posts_excerpt_length',70));
 }
 endif;
-add_filter('excerpt_length', 'legalpress_my_excerpt_length');
+
+add_filter('excerpt_length', 'legalpress_excerpt_length');
 
 
 
@@ -75,7 +76,7 @@ add_filter('excerpt_length', 'legalpress_my_excerpt_length');
  */
 
  if( !function_exists( 'legalpress_category_list' ) ):
-    fucntion legalpress_category_list() {
+    function legalpress_category_list() {
         $pm_args = array(
             'type'      => 'post',
             'taxonomy'  => 'category',
@@ -159,13 +160,13 @@ function legalpress_filter_menu_search_hook() {
     add_filter('wp_nav_menu_items','legalpress_menu_search', 10, 2);
 }
 endif;
-add action( 'wp', 'legalpress_filter_menu_search_hook' );
+add_action( 'wp', 'legalpress_filter_menu_search_hook' );
 
 
 /**
  * Preconnect Fonts
  */
-function legalopress_preconnect_fonts() {
+function legalpress_preconnect_fonts() {
     ?>
         <link rel="dns-prefetch" href="https://fonts.gstatic.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -177,7 +178,7 @@ add_action( 'wp_head', 'legalpress_preconnect_fonts' );
 /**
  * Search Form
  */
-if ( ! function_exists( 'blogson_search_content' ) ) :
+if ( ! function_exists( 'legalpress_search_content' ) ) :
 function legalpress_search_content() {
     ?>
         <div class="search-form-wrapper">
@@ -222,7 +223,7 @@ function legalpress_left_modal_content() {
     <?php 
 }
 endif;
-add_action('blogson_action_left_modal_content', 'legalpress_left_modal_content');
+add_action('legalpress_action_left_modal_content', 'legalpress_left_modal_content');
 
 
 /**

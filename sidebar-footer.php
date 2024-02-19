@@ -11,7 +11,7 @@
 
  <?php //User selected widget columns
 
-    $lagalpress_widget_num=esc_html(get_theme_mod('legalpress_footer_widgets','4'));
+    $legalpress_widget_num=esc_html(get_theme_mod('legalpress_footer_widgets','4'));
 
     if($legalpress_widget_num=='4') {
         $legalpress_cols='col-md-3';

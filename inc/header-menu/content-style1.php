@@ -12,7 +12,7 @@
  <?php 
     $page_val = is_front_page() ? 'home' : 'page' ;
 ?>
-<header id="<?php echo esc-attr($page_val); ?>-inner" class="elementor-menu-anchor theme-menu-wrapper full-width-menu style1 page" role="banner">
+<header id="<?php echo esc_attr($page_val); ?>-inner" class="elementor-menu-anchor theme-menu-wrapper full-width-menu style1 page" role="banner">
     <?php 
         if(true===get_theme_mod('legalpress_enable_highlight_area',true) && is_front_page()) {
             ?><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'legalpress'); ?></a><?php 
@@ -110,7 +110,7 @@
                     </div>
                     <div class="navbar-collapse collapse clearfix" id="navbar-collapse-1">
                         <?php 
-                            wp_nav_manu( array(
+                            wp_nav_menu( array(
                                 'theme-location'    => 'primary',
                                 'depth'             => 3,
                                 'container'         => 'ul',
@@ -156,7 +156,7 @@
             <nav role="navigation">
                 <div class="side-navigation clearfix" id="navbar-collapse-2">
                     <?php 
-                        wp_nav( array(
+                        wp_nav_menu( array(
                             'theme_location'    => 'primary',
                             'depth'             => 3,
                             'container'         => 'ul',

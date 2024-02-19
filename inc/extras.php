@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * @package blogson
+ * @package legalpress
  */
 
 /**
@@ -11,8 +11,8 @@
  * @return array
  */
 
-if ( ! function_exists( 'blogson_body_classes' ) ) :
-function blogson_body_classes( $classes ) {
+if ( ! function_exists( 'legalpress_body_classes' ) ) :
+function legalpress_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,4 +26,4 @@ function blogson_body_classes( $classes ) {
 	return $classes;
 }
 endif;
-add_filter( 'body_class', 'blogson_body_classes' );
+add_filter( 'body_class', 'legalpress_body_classes' );
