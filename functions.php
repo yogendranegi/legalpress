@@ -319,3 +319,6 @@ add_action( 'wp_head', 'legalpress_pingback_header' );
 
 // include template-functions.php
 require_once(get_template_directory().'/inc/template-functions.php');
+
+// include template-tags.php
+require_once(get_template_directory().'/inc/template-tags.php');

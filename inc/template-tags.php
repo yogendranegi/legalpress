@@ -1,4 +1,4 @@
-a<?php 
+<?php 
 /**
  * Custom template tags for this theme.
  *
@@ -39,7 +39,7 @@ function legalpress_posted_on() {
 }
 endif;
 
-if  ( ! funtion_exists( 'legalpress_entry_footer' ) ):
+if  ( ! function_exists( 'legalpress_entry_footer' ) ):
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
