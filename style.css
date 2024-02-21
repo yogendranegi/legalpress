@@ -28,6 +28,11 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
+}
+
+head {
+  <h1>This is a Heading</h1>
 }
 
 body {
@@ -1680,6 +1685,7 @@ Header Style 1
   width: 25%;
   padding: 0;
   text-align: left;
+  margin-top: 20px;
 }
 
 .style1 .top-menu-wrapper {
@@ -2309,3 +2315,55 @@ Responsive CSS
   }
 }
 
+.footer-menu .footer-menu-wrapper ul{
+  display: flex;
+  margin-right: 10px
+  ;
+}
+
+
+
+/* Footer menu wrapper */
+.footer-menu-wrapper ul>li{
+  margin-right: 1px;
+  padding:20px;
+  padding-right: 50px;
+}
+
+
+/* Hidden Buttons in the header */
+.search-btn , .search , .blog-search , .search-closebtn , .searchsubmitmenu , .fas fa-search {
+  display: none;
+}
+
+
+#navbar-collapse-1 {
+  margin-top: 15px;
+}
+
+
+.top-menu-wrapper {  
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
+
+  .logo {
+    max-width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+ul#menu-header li>a{
+  color:blue;
+}
+
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
