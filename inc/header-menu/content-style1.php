@@ -124,7 +124,7 @@
 </header>
 
 <!-- Side Bar -->
-<section id="hd-left-bar" class="hd-bar left-align mCustomScrollbar" data-mcs-theme="dark5px">
+<section id="hd-left-bar" class="hd-bar left-align mCustomScrollbar" data-mcs-theme="dark">
     <div class="hd-bar-wrapper">
     	<div class="hd-bar-closer">
 	        <button><span class="qb-close-button"></span></button>
