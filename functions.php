@@ -247,9 +247,6 @@ endif;
 add_action( 'admin_enqueue_scripts', 'legalpress_admin_scripts' );
 
 
-/**
- * Display Dynamic CSS.
- */
 
 
 
@@ -281,9 +278,8 @@ add_filter('excerpt_length', 'legalpress_my_excerpt_length');
  * Enqueue Styles and Scripts
  */
 function legalpress_scripts() {
-	wp_register_style( 'legalpress-main', get_template_directory_uri() . '/style' . ( ( LEGALPRESS_MINIFY ) ? '.min' : '' ) . '.css', array(), wp_get_theme()->get('Version'));
-	wp_style_add_data( 'legalpress-main', 'rtl', 'replace' );
-	wp_style_add_data( 'legalpress-main', 'suffix', ( ( LEGALPRESS_MINIFY ) ? '.min' : '' ) );
+	wp_register_style( 'legalpress-main', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+
 	wp_enqueue_style( 'legalpress-main' );
 	if(get_theme_mod( 'legalpress_enable_poppings_font',false)) :
 		wp_enqueue_style( 'poppins-google-font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap', array(), '1.0'); 
@@ -332,6 +328,8 @@ function legalpress_search_form( $form ) {
 }
 add_filter( 'get_search_form', 'legalpress_search_form', 100 );
 
+/*
+
 
 
 // /** 
@@ -369,3 +367,7 @@ add_filter( 'get_search_form', 'legalpress_search_form', 100 );
 //  * Load core files
 //  */
 // require get_template_directory() . '/inc/load-core-files.php';
+
+require get_parent_theme_file_path() . '/inc/template-functions.php'; 
+
+require get_parent_theme_file_path() . '/inc/template-tags.php'; 

@@ -36,7 +36,7 @@ function legalpress_footer_copyrights() {
                             }
                         }
                         else{
-                            echo data_i18n(
+                            echo date_i18n(
                                 /* translators: Copyright data format, see https://secure.php.net/date */
                                     _x( 'Y', 'copyright date format', 'legalpress')
                                 );

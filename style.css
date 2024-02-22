@@ -2354,15 +2354,6 @@ Responsive CSS
 }
 
 
-/* Header menu items */
-ul#menu-header li>a{
-  color:blue;
-  font-size: 13px;
-  /* padding-right: 80px; */
-  margin-left: -39px;
-  padding-left: 80px;
-}
-
 #navbar-collapse1{
   text-align: center;
   padding-left: 80px;
@@ -2371,4 +2362,33 @@ ul#menu-header li>a{
 #header-main {
   padding-right: 65px;
 
+}
+
+
+/* Header menu items */
+ul#menu-header .navigatio li{ 
+  color:blue;
+  font-size: 13px;
+   padding-right: 80px;
+  margin-left: -39px;
+  padding-left: 80px;
+ }
+
+
+
+ .top-menu .navbar-collapse {
+  display:inline-block;
+    list-style-type:none;
+    
+
+}
+#menu-header .navigation >li {
+  display:inline-block;
+    list-style-type:none;
+    
+
+}
+
+.menu-header span{
+  display:none;
 }
