@@ -1717,7 +1717,7 @@ Toggle button
   right: 0px;
   top: -75px;
   z-index: 12;
-  display: none;
+  display: block;
 }
 
 .top-menu .menu-header button {
@@ -2331,7 +2331,7 @@ Responsive CSS
 
 /* Hidden Buttons in the header */
 .search-btn , .search , .blog-search , .search-closebtn , .searchsubmitmenu , .fas fa-search {
-  display: none;
+  display: flexe;
 }
 
 
@@ -2342,28 +2342,33 @@ Responsive CSS
 
 .top-menu-wrapper {  
     padding-bottom: 20px;
-    padding-left: 10px;
+    /* padding-left: 10px;
+    padding-right: 70px; */
   }
 
+
+/* Logo */
   .logo {
-    max-width: 200px; /* Adjust the width as needed */
+    max-width: 180px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
 
+/* Header menu items */
 ul#menu-header li>a{
   color:blue;
+  font-size: 13px;
+  /* padding-right: 80px; */
+  margin-left: -39px;
+  padding-left: 80px;
 }
 
-.button {
-  background-color: #04AA6D; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
+#navbar-collapse1{
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  padding-left: 80px;
+  size: 1px;
 }
+#header-main {
+  padding-right: 65px;
 
-@import url('button.css');
+}
