@@ -13,11 +13,11 @@
  */
 
 get_header(); 
-legalpress_before_title();
+// legalpress_before_title();
 if(true===get_theme_mod( 'legalpress_enable_page_title',true)) :
 	do_action('legalpress_get_page_title',false,false,false,false);
 endif;
-legalpress_after_title();
+// legalpress_after_title();
 
 ?>
 <div class="page">
@@ -27,19 +27,19 @@ legalpress_after_title();
 				<div class="row">
 					<?php
 						while ( have_posts() ) : the_post();
-							if ( legalpress_is_active_woocommerce() ) :
-								if ( is_page( 'cart' ) || is_cart() ) :
-									get_template_part( 'template-parts/page/content', 'cart-page' );
-								elseif ( is_page( 'checkout' ) || is_checkout() ) :
-									get_template_part( 'template-parts/page/content', 'checkout-page' );
-								elseif ( is_page( 'my-account' ) || is_account_page() ) :
-									get_template_part( 'template-parts/page/content', 'myaccount-page' );
-								else :
-									get_template_part( 'template-parts/page/content', 'page' );
-								endif;
-							else:
-								get_template_part( 'template-parts/page/content', 'page' );
-							endif;
+							// if ( legalpress_is_active_woocommerce() ) :
+							// 	if ( is_page( 'cart' ) || is_cart() ) :
+							// 		get_template_part( 'template-parts/page/content', 'cart-page' );
+							// 	elseif ( is_page( 'checkout' ) || is_checkout() ) :
+							// 		get_template_part( 'template-parts/page/content', 'checkout-page' );
+							// 	elseif ( is_page( 'my-account' ) || is_account_page() ) :
+							// 		get_template_part( 'template-parts/page/content', 'myaccount-page' );
+							// 	else :
+							// 		get_template_part( 'template-parts/page/content', 'page' );
+							// 	endif;
+							// else:
+							// 	get_template_part( 'template-parts/page/content', 'page' );
+							// endif;
 
 							// If comments are open or we have at least one comment, load up the comment template.
 							if ( comments_open() || get_comments_number() ) :

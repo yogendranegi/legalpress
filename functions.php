@@ -250,15 +250,7 @@ add_action( 'admin_enqueue_scripts', 'legalpress_admin_scripts' );
 /**
  * Display Dynamic CSS.
  */
-function legalpress_dynamic_css_wrap() {
-	require_once( get_parent_theme_file_path( '/css/dynamic.css.php' ) );  
-	?>
-  		<style type="text/css" id="legalpress-dynamic-style">
-    		<?php echo legalpress_dynamic_css_stylesheet(); ?>
-  		</style>
-	<?php 
-}
-add_action( 'wp_head', 'legalpress_dynamic_css_wrap' );
+
 
 
 /** 
@@ -342,38 +334,38 @@ add_filter( 'get_search_form', 'legalpress_search_form', 100 );
 
 
 
-/** 
-*  Plugins Required
-*/
-function legalpress_register_required_plugins() {
-    $plugins = array(  
-      	array(
-          'name'               => 'Spiraclethemes Site Library',
-          'slug'               => 'spiraclethemes-site-library',
-          'source'             => '',
-          'required'           => false,          
-          'force_activation'   => false,
-      	),    
-    );
+// /** 
+// *  Plugins Required
+// */
+// function legalpress_register_required_plugins() {
+//     $plugins = array(  
+//       	array(
+//           'name'               => 'Spiraclethemes Site Library',
+//           'slug'               => 'spiraclethemes-site-library',
+//           'source'             => '',
+//           'required'           => false,          
+//           'force_activation'   => false,
+//       	),    
+//     );
 
-    $config = array(
-            'id'           => 'legalpress',
-            'default_path' => '',
-            'menu'         => 'tgmpa-install-plugins',
-            'has_notices'  => true,
-            'dismissable'  => true,
-            'dismiss_msg'  => '',
-            'is_automatic' => false,
-            'message'      => '',
-            'strings'      => array()
-    );
+//     $config = array(
+//             'id'           => 'legalpress',
+//             'default_path' => '',
+//             'menu'         => 'tgmpa-install-plugins',
+//             'has_notices'  => true,
+//             'dismissable'  => true,
+//             'dismiss_msg'  => '',
+//             'is_automatic' => false,
+//             'message'      => '',
+//             'strings'      => array()
+//     );
 
-    tgmpa( $plugins, $config );
+//     tgmpa( $plugins, $config );
 
-}
-add_action( 'tgmpa_register', 'legalpress_register_required_plugins' );
+// }
+// add_action( 'tgmpa_register', 'legalpress_register_required_plugins' );
 
-/**
- * Load core files
- */
-require get_template_directory() . '/inc/load-core-files.php';
+// /**
+//  * Load core files
+//  */
+// require get_template_directory() . '/inc/load-core-files.php';

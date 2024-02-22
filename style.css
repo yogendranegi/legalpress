@@ -2331,7 +2331,7 @@ Responsive CSS
 
 /* Hidden Buttons in the header */
 .search-btn , .search , .blog-search , .search-closebtn , .searchsubmitmenu , .fas fa-search {
-  display: flexe;
+  display: none;
 }
 
 
