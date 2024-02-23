@@ -128,39 +128,6 @@ endif;
 add_filter('body_class', 'legalpress_add_blog_sidebar_classes_to_body');
 
 
-/**
- * Menu Search
- */
-if ( ! function_exists( 'legalpress_menu_search' ) ):
-function legalpress_menu_search($items, $args) {
-    if( $args->theme_location == 'primary' )
-        return $items.'<li class="menu-header-search">
-                            <button class="search-btn"><i class="fas fa-search"></i></button>
-                        </li>
-                        <!-- Popup Search -->
-                        <div id="searchOverlay" class="overlay">
-                            <div class="overlay-content">
-                                <form method="get" class="searchformmenu" action="'. esc_url(home_url( '/' )) . '">
-                                    <div class="search">
-                                        <input type="text" value="" class="blog-search" name="s" placeholder="'. esc_attr__( 'Search here','legalpress' ) .'">
-                                        <label for="searchsubmit" class="search-icon"><i class="fas fa-search"></i></label>
-                                        <input type="submit" class="searchsubmitmenu" value"'. esc_attr__( 'Search','legalpress' ) .'">
-                                    </div>
-                                </form>
-                            </div>
-                            <button class="search-closebtn" title="'. esc_attr__('Close','legalpress') .'" > <i class="fas fa-times"></i></button>
-                        </div>
-                        ';
-        return $items;
-    }
-endif;
-
-if ( ! function_exists( 'legalpress_filter_menu_search_hook' ) ) :
-function legalpress_filter_menu_search_hook() {
-    add_filter('wp_nav_menu_items','legalpress_menu_search', 10, 2);
-}
-endif;
-add_action( 'wp', 'legalpress_filter_menu_search_hook' );
 
 
 /**

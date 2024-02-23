@@ -33,6 +33,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 article,
@@ -1140,8 +1141,8 @@ Navigation
   display: block;
   line-height: 30px;
   padding: 12px 18px;
-  font-size: 14px;
-  color: #404040;
+  font-size: 12px;
+  color: #0c0303
   opacity: 1;
   letter-spacing: 1px;
 }
@@ -1688,13 +1689,12 @@ Header Style 1
 
 .style1 .top-menu-wrapper {
   width: 75%;
-  float: right;
   border: none;
   margin-bottom: 20px;
 }
 
 .style1 .top-menu {
-  text-align: left;
+  text-align: center;
 }
 
 .style1 h1.site-title,
@@ -2331,7 +2331,7 @@ Responsive CSS
 
 /* Hidden Buttons in the header */
 .search-btn , .search , .blog-search , .search-closebtn , .searchsubmitmenu , .fas fa-search {
-  display: none;
+  ;
 }
 
 
@@ -2342,8 +2342,8 @@ Responsive CSS
 
 .top-menu-wrapper {  
     padding-bottom: 20px;
-    /* padding-left: 10px;
-    padding-right: 70px; */
+    padding-left: 60px;
+    /* padding-right: 70px; */
   }
 
 
@@ -2361,18 +2361,19 @@ Responsive CSS
 }
 #header-main {
   padding-right: 65px;
+  padding-left: 24px;
 
 }
 
 
 /* Header menu items */
-ul#menu-header .navigatio li{ 
-  color:blue;
-  font-size: 13px;
+/* ul#menu-header .navigation li{ 
+  color:cyan;
+  font-size: 7px;
    padding-right: 80px;
   margin-left: -39px;
   padding-left: 80px;
- }
+ } */
 
 
 
@@ -2382,13 +2383,74 @@ ul#menu-header .navigatio li{
     
 
 }
+
+/* 
 #menu-header .navigation >li {
   display:inline-block;
-    list-style-type:none;
-    
+  list-style-type:none;
+  
+} */
 
+/* Button */
+
+.top-menu .navigation>li:last-child {
+background-color: #D2B48C;
+/* color: #fff;  */
+/* padding: 10px 20px;  */
+/* border: none; */
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+text-transform: uppercase;
+/* position: static; */
+
+position: absolute;
+left: 60px;
+bottom: -20px;
+/* right:20px;
+top: 70px; */
+}
+
+/* Hidden buttons and items */
+.searchformmenu .blog-search ,
+.searchsubmitmenu,
+.search-closebtn,
+.menu-header-search{
+  display: none;
 }
 
 .menu-header span{
   display:none;
+}
+
+@media screen and (max-width: 992px) {
+  .searchformmenu .blog-search{
+    display: none;
+  }
+}
+
+
+/* Background Image
+.page-template-default {
+  background-image: url('.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+} 
+*/
+.top-menu .navigation>li:last-child {
+    background-color: #D2B48C;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    POSITION: relative;
+    left: 300px;
+    bottom: auto;
+
+    }
+.top-menu .navigation > li {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    left: 140px;
 }
