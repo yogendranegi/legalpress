@@ -8,9 +8,9 @@
  */
 
 get_header();
-legalpress_before_title();
+// legalpress_before_title();
 do_action('legalpress_get_page_title',true,false,false,false);
-legalpress_after_title();
+// legalpress_after_title();
 $cb_values= explode(",",esc_html(get_theme_mod( 'legalpress_single_post_meta_pill_checkbox','date,author,categories,tags,comments,image,links' )));
 
 ?>

@@ -8,10 +8,12 @@
  */
 
 get_header();
-legalpress_before_title();
+// legalpress_before_title();
 ?>
 	<div class="page-title">
-        <?php legalpress_before_title_content(); ?>
+        <?php 
+		// legalpress_before_title_content();
+		 ?>
 	        <div class="content-section">
 		        <div class="container">
 		           <h1 class="main-title">
@@ -24,10 +26,12 @@ legalpress_before_title();
 		            ?>
 		        </div>
 		    </div>
-	    <?php legalpress_after_title_content(); ?>
+	    <?php 
+		// legalpress_after_title_content();
+		 ?>
     </div>
 <?php
-legalpress_after_title();
+// legalpress_after_title();
 ?>
 
 <div id="primary" class="<?php echo esc_attr(get_theme_mod('legalpress_header_menu_style','style1')); ?> content-area">

@@ -132,8 +132,8 @@ endif;
 
 	$defaults = array(
 	                'comment_field' => '<p class="comment-form-comment"><label for="comment" class="screen-reader-text">' . esc_html__( 'Comment', 'legalpress' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
-	                'comment_notes_before' => null,
-	                'comment_notes_after'  => null,
+	                'comment_notes_before' => false,
+	                'comment_notes_after'  => false,
 	                'id_form'              => 'commentform',
               		'id_submit'            => 'submit',
            			'title_reply'          => apply_filters( 'legalpress_leave_comment', esc_html__( 'Leave a Comment', 'legalpress' ) ),
