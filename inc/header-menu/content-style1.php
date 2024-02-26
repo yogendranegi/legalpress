@@ -25,6 +25,17 @@
 	        do_action( 'legalpress_action_enable_header_topbar_style1' );
 		endif;
 	?>
+	<div id="topbar" class="topbar-main">
+		<div class="container">
+			<div class="col-md-12">
+				<div class="topbar-info">
+					<span class="contact"><?php esc_html_e('Contact Us : +1234567890     '     ,'legalpress')?></span>
+					<span class="email"><?php esc_html_e('Email Us : abc@xyz.com','legalpress')?></span>
+					
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="header-main" class="header-wrapper legalpress-wrapper">
 		<div class="container">
 			<div class="clearfix"></div>

@@ -1658,7 +1658,6 @@ Header Style 1
 */
 
 .style1 #header-main {
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -1722,7 +1721,7 @@ Toggle button
 
 .top-menu .menu-header button {
   position: relative;
-  display: block;
+  /* display: block; */
   height: 36px;
   width: 42px;
   background: none;
@@ -2131,6 +2130,7 @@ aside .gallery-columns-9 figure {
 }
 
 
+
 /**
 ====================================================================
 Extra CSS
@@ -2233,7 +2233,14 @@ Responsive CSS
       margin-top: 30px;
   }
 
-  /* single post */
+
+
+
+/**
+====================================================================
+Single Post
+====================================================================
+*/ 
 
   .single .title, .single .content {
       width: 100%;
@@ -2321,7 +2328,13 @@ Responsive CSS
 
 
 
-/* Footer menu wrapper */
+
+/**
+====================================================================
+Footer menu wrapper
+====================================================================
+*/ 
+
 .footer-menu-wrapper ul>li{
   margin-right: 1px;
   padding:20px;
@@ -2329,7 +2342,14 @@ Responsive CSS
 }
 
 
-/* Hidden Buttons in the header */
+
+
+/**
+====================================================================
+Hidden buttons in the Header
+====================================================================
+*/ 
+
 .search-btn , .search , .blog-search , .search-closebtn , .searchsubmitmenu , .fas fa-search {
   ;
 }
@@ -2347,13 +2367,20 @@ Responsive CSS
   }
 
 
-/* Logo */
-  .logo {
+
+
+/**
+====================================================================
+Logo
+====================================================================
+*/ 
+
+.logo {
     max-width: 180px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
-
+/* 
 #navbar-collapse1{
   text-align: center;
   padding-left: 80px;
@@ -2363,7 +2390,7 @@ Responsive CSS
   padding-right: 65px;
   padding-left: 24px;
 
-}
+} */
 
 
 /* Header menu items */
@@ -2377,12 +2404,12 @@ Responsive CSS
 
 
 
- .top-menu .navbar-collapse {
+ /* .top-menu .navbar-collapse {
   display:inline-block;
     list-style-type:none;
     
 
-}
+} */
 
 /* 
 #menu-header .navigation >li {
@@ -2391,28 +2418,43 @@ Responsive CSS
   
 } */
 
-/* Button */
 
+
+
+
+/**
+====================================================================
+Button
+====================================================================
+*/ 
+/* 
 .top-menu .navigation>li:last-child {
 background-color: #D2B48C;
 /* color: #fff;  */
 /* padding: 10px 20px;  */
 /* border: none; */
-border-radius: 5px;
+/* border-radius: 5px;
 cursor: pointer;
 font-size: 16px;
 font-weight: bold;
-text-transform: uppercase;
+text-transform: uppercase; */
 /* position: static; */
-
+/* 
 position: absolute;
 left: 60px;
-bottom: -20px;
+bottom: -20px; */
 /* right:20px;
 top: 70px; */
-}
+} */
 
-/* Hidden buttons and items */
+
+
+/**
+====================================================================
+Hidden buttons and Items
+====================================================================
+*/ 
+
 .searchformmenu .blog-search ,
 .searchsubmitmenu,
 .search-closebtn,
@@ -2438,6 +2480,16 @@ top: 70px; */
   background-repeat: no-repeat;
 } 
 */
+
+
+
+
+/**
+====================================================================
+Header Menu
+====================================================================
+*/ 
+
 .top-menu .navigation>li:last-child {
     background-color: #D2B48C;
     border-radius: 5px;
@@ -2445,7 +2497,7 @@ top: 70px; */
     text-transform: uppercase;
     POSITION: relative;
     left: 300px;
-    bottom: auto;
+    bottom: 55px;
 
     }
 .top-menu .navigation > li {
@@ -2453,4 +2505,24 @@ top: 70px; */
     display: inline-block;
     padding: 0;
     left: 140px;
+    bottom: 55px;
+}
+
+
+
+
+/**
+====================================================================
+Header Section 1
+====================================================================
+*/  
+
+#topbar{
+  background: darkseagreen;
+  text-align: right;
+}
+
+
+.topbar-info span {
+  padding-left:12px;
 }
