@@ -31,7 +31,7 @@ function legalblow_footer_copyrights() {
                         if("" != esc_html(get_theme_mod( 'legalblow_foote_copyright_text'))) {
                             echo esc_html(get_theme_mod( 'legalblow_footer_copyright_text'));
                             if(get_theme_mod('legalblow_en_footer_credits',true)) {
-                                ?><span><?php esc_html_e(' | Theme by ','legalblow') ?><a href="<?php echo esc_url(LEGALPRESS_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','legalblow') ?></a></span>
+                                ?><span><?php esc_html_e(' | Theme by ','legalblow') ?><a href="<?php echo esc_url(LEGALBLOW_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','legalblow') ?></a></span>
                                 <?php 
                             }
                         }
@@ -42,7 +42,7 @@ function legalblow_footer_copyrights() {
                                 );
                                 ?>
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-                                    <span><?php esc_html_e(' | Theme by ','legalblow') ?><a href="<?php echoesc_url(LEGALPRESS_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','legalblow') ?></a></span>
+                                    <span><?php esc_html_e(' | Theme by ','legalblow') ?><a href="<?php echoesc_url(LEGALBLOW_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','legalblow') ?></a></span>
                                 <?php 
                             }
                         ?>

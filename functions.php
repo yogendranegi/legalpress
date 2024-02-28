@@ -12,11 +12,11 @@
  */
 
 // Core Constants
-define('LEGALPRESS_REQUIRED_PHP_VERSION', '5.6' );
-define('LEGALPRESS_DIR_PATH', get_template_directory());
-define('LEGALPRESS_THEME_AUTH','https://www.spiraclethemes.com/');
-define('LEGALPRESS_DIR_URI', get_template_directory_uri());
-define('LEGALPRESS_MINIFY', get_theme_mod('legalblow_enable_minify_styles_scripts',true));
+define('LEGALBLOW_REQUIRED_PHP_VERSION', '5.6' );
+define('LEGALBLOW_DIR_PATH', get_template_directory());
+define('LEGALBLOW_THEME_AUTH','https://www.spiraclethemes.com/');
+define('LEGALBLOW_DIR_URI', get_template_directory_uri());
+define('LEGALBLOW_MINIFY', get_theme_mod('legalblow_enable_minify_styles_scripts',true));
 
 //Register Required plugin
 require_once(get_template_directory() .'/inc/class-tgm-plugin-activation.php');
@@ -27,14 +27,14 @@ require_once(get_template_directory() .'/inc/class-tgm-plugin-activation.php');
 */
 function legalblow_check_theme_setup( $oldtheme_name, $oldtheme ) {
 	// Compare versions.
-	if ( version_compare(phpversion(), LEGALPRESS_REQUIRED_PHP_VERSION, '<') ) :
+	if ( version_compare(phpversion(), LEGALBLOW_REQUIRED_PHP_VERSION, '<') ) :
 	// Theme not activated info message.
 	add_action( 'admin_notices', 'legalblow_php_admin_notice' );
 	function legalblow_php_admin_notice() {
 		?>
 			<div class="update-nag">
 		  		<?php esc_html_e( 'You need to update your PHP version to a minimum of 5.6 to run LegalBlow Theme.', 'legalblow' ); ?> <br />
-		  		<?php esc_html_e( 'Actual version is:', 'legalblow' ) ?> <strong><?php echo phpversion(); ?></strong>, <?php esc_html_e( 'required is', 'legalblow' ) ?> <strong><?php echo LEGALPRESS_REQUIRED_PHP_VERSION; ?></strong>
+		  		<?php esc_html_e( 'Actual version is:', 'legalblow' ) ?> <strong><?php echo phpversion(); ?></strong>, <?php esc_html_e( 'required is', 'legalblow' ) ?> <strong><?php echo LEGALBLOW_REQUIRED_PHP_VERSION; ?></strong>
 			</div>
 		<?php
 	}
@@ -241,7 +241,7 @@ add_action( 'widgets_init', 'legalblow_widgets_init' );
 */
 if ( ! function_exists( 'legalblow_admin_scripts' ) ) :
 function legalblow_admin_scripts($hook) {
-  	wp_enqueue_style( 'legalblow-info-css', get_template_directory_uri() . '/css/legalblow-theme-info' . ( ( LEGALPRESS_MINIFY ) ? '.min' : '' ) . '.css', false );
+  	wp_enqueue_style( 'legalblow-info-css', get_template_directory_uri() . '/css/legalblow-theme-info' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.css', false );
 }
 endif;
 add_action( 'admin_enqueue_scripts', 'legalblow_admin_scripts' );
@@ -286,17 +286,17 @@ function legalblow_scripts() {
 	endif;
 	// Sticky Header js
     if ( get_theme_mod( 'legalblow_enable_stickyheader', false ) ) :
-        wp_enqueue_script( 'legalblow-sticky', get_template_directory_uri() . '/js/sticky' . ( ( LEGALPRESS_MINIFY ) ? '.min' : '' ) . '.js', array(), wp_get_theme()->get('Version'), true );
+        wp_enqueue_script( 'legalblow-sticky', get_template_directory_uri() . '/js/sticky' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js', array(), wp_get_theme()->get('Version'), true );
     endif;
     // Main js
-	wp_enqueue_script( 'legalblow-script', get_template_directory_uri() . '/js/main.js' . ( ( LEGALPRESS_MINIFY ) ? '.min' : '' ) . '.js',array(), wp_get_theme()->get('Version'), true );
+	wp_enqueue_script( 'legalblow-script', get_template_directory_uri() . '/js/main.js' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js',array(), wp_get_theme()->get('Version'), true );
 
 	//bootstrap
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array());
 
 	// Preloader js
 	if(get_theme_mod( 'legalblow_enable_preloader',false)) :
-		wp_enqueue_script( 'legalblow-preloader-script', get_template_directory_uri() . '/js/preloader' . ( ( LEGALPRESS_MINIFY ) ? '.min' : '' ) . '.js',array(), 	wp_get_theme()->get('Version'), true );
+		wp_enqueue_script( 'legalblow-preloader-script', get_template_directory_uri() . '/js/preloader' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js',array(), 	wp_get_theme()->get('Version'), true );
 	endif;
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) :

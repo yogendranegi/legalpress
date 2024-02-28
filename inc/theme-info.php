@@ -129,7 +129,7 @@ function legalblow_theme_info() {
 							<span class="dashicons dashicons-visibility"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(LEGALPRESS_THEME_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DEMO', 'legalblow' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LEGALBLOW_THEME_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DEMO', 'legalblow' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -139,7 +139,7 @@ function legalblow_theme_info() {
 							<span class="dashicons dashicons-format-aside"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(LEGALPRESS_THEME_DOC_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DOCUMENTATION', 'legalblow' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LEGALBLOW_THEME_DOC_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW DOCUMENTATION', 'legalblow' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -149,7 +149,7 @@ function legalblow_theme_info() {
 							<span class="dashicons dashicons-video-alt2"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(LEGALPRESS_THEME_VIDEOS_URL); ?>" target="_blank"><?php esc_html_e( 'VIDEO TUTORIALS', 'legalblow' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LEGALBLOW_THEME_VIDEOS_URL); ?>" target="_blank"><?php esc_html_e( 'VIDEO TUTORIALS', 'legalblow' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -159,7 +159,7 @@ function legalblow_theme_info() {
 							<span class="dashicons dashicons-sos"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(LEGALPRESS_THEME_SUPPORT_URL); ?>" target="_blank"><?php esc_html_e( 'ASK FOR SUPPORT', 'legalblow' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LEGALBLOW_THEME_SUPPORT_URL); ?>" target="_blank"><?php esc_html_e( 'ASK FOR SUPPORT', 'legalblow' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -170,7 +170,7 @@ function legalblow_theme_info() {
 							<span class="dashicons dashicons-star-filled"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(LEGALPRESS_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'RATE OUR THEME', 'legalblow' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LEGALBLOW_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'RATE OUR THEME', 'legalblow' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -180,7 +180,7 @@ function legalblow_theme_info() {
 							<span class="dashicons dashicons-admin-tools"></span>
 						</div>
 						<div class="heading">
-							<h3><a href="<?php echo esc_url(LEGALPRESS_THEME_CHANGELOGS_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW CHANGELOGS', 'legalblow' ); ?></a></h3>
+							<h3><a href="<?php echo esc_url(LEGALBLOW_THEME_CHANGELOGS_URL); ?>" target="_blank"><?php esc_html_e( 'VIEW CHANGELOGS', 'legalblow' ); ?></a></h3>
 						</div>						
 					</div>
 				</div>
@@ -345,7 +345,7 @@ function legalblow_theme_info() {
 				<div class="col-md-12">
 					<div class="title">
 						<div class="review-content">
-							<p><?php esc_html_e( ' Please ', 'legalblow' )  ?><a href="<?php echo esc_url(LEGALPRESS_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'rate our theme', 'legalblow' ); ?></a>
+							<p><?php esc_html_e( ' Please ', 'legalblow' )  ?><a href="<?php echo esc_url(LEGALBLOW_THEME_RATINGS_URL); ?>" target="_blank"><?php esc_html_e( 'rate our theme', 'legalblow' ); ?></a>
 							<?php esc_html_e( '★★★★★ to help us spread the word. Thank you from the Spiracle Themes team!', 'legalblow' ); ?></p>
 						</div>
 					</div>
