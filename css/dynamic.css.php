@@ -1,6 +1,6 @@
 <?php
 /**
- * LegalPress : Dynamic CSS Stylesheet
+ * LegalBlow : Dynamic CSS Stylesheet
  *
  */
 

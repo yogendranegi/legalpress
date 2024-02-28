@@ -1,20 +1,20 @@
 <?php
 /**
- * Theme information LegalPress
+ * Theme information LegalBlow
  *
  * @package legalblow
  */
 
 
-if ( ! class_exists( 'LegalPress_About_Page' ) ) {
+if ( ! class_exists( 'LegalBlow_About_Page' ) ) {
 	/**
 	 * Singleton class used for generating the about page of the theme.
 	 */
-	class LegalPress_About_Page {
+	class LegalBlow_About_Page {
 		/**
 		 * Define the version of the class.
 		 *
-		 * @var string $version The LegalPress_About_Page class version.
+		 * @var string $version The LegalBlow_About_Page class version.
 		 */
 		private $version = '1.0.0';
 		/**
@@ -54,21 +54,21 @@ if ( ! class_exists( 'LegalPress_About_Page' ) ) {
 		 */
 		private $notification;
 		/**
-		 * The single instance of LegalPress_About_Page
+		 * The single instance of LegalBlow_About_Page
 		 *
-		 * @var LegalPress_About_Page $instance The LegalPress_About_Page instance.
+		 * @var LegalBlow_About_Page $instance The LegalBlow_About_Page instance.
 		 */
 		private static $instance;
 		/**
-		 * The Main LegalPress_About_Page instance.
+		 * The Main LegalBlow_About_Page instance.
 		 *
-		 * We make sure that only one instance of LegalPress_About_Page exists in the memory at one time.
+		 * We make sure that only one instance of LegalBlow_About_Page exists in the memory at one time.
 		 *
 		 * @param array $config The configuration array.
 		 */
 		public static function legalblow_init( $config ) {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof LegalPress_About_Page ) ) {
-				self::$instance = new LegalPress_About_Page;				
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof LegalBlow_About_Page ) ) {
+				self::$instance = new LegalBlow_About_Page;				
 				self::$instance->config = $config;
 				self::$instance->legalblow_setup_config();	
 			}
@@ -102,7 +102,7 @@ if ( ! class_exists( 'LegalPress_About_Page' ) ) {
 add_action('admin_menu', 'legalblow_add_menu');
 
 function legalblow_add_menu() {
-     add_theme_page(esc_html__('About LegalPress Theme','legalblow'), esc_html__('LegalPress Info','legalblow'),'manage_options', esc_html__('legalblow-theme-info','legalblow'), esc_html__('legalblow_theme_info','legalblow'));
+     add_theme_page(esc_html__('About LegalBlow Theme','legalblow'), esc_html__('LegalBlow Info','legalblow'),'manage_options', esc_html__('legalblow-theme-info','legalblow'), esc_html__('legalblow_theme_info','legalblow'));
 }
 
 /**
@@ -115,9 +115,9 @@ function legalblow_theme_info() {
 			<div class="row">
 				<div class="col-md-12">
 					<div class="title">
-						<h2><?php esc_html_e( 'Thank you for using LegalPress Free WordPress theme', 'legalblow' ); ?></h2>
+						<h2><?php esc_html_e( 'Thank you for using LegalBlow Free WordPress theme', 'legalblow' ); ?></h2>
 						<div class="title-content">
-							<p><?php esc_html_e( 'Are you looking for a WordPress theme to easily customize all aspects of your website? Look no further than LegalPress WordPress Theme and Elementor Page Builder. This powerful combination allows users to easily customize the fundamental elements of their WordPress website with no coding needed. LegalPress is an attractive and modern theme, allowing users to create beautiful websites in minutes. It features a mobile-friendly design, responsive layout, easy customization options, unlimited color schemes, a large collection of fonts and much more. With Elementor Page Builder users can quickly design stunning pages that look professional. Users have full control over what content is displayed where on their site as well as being able to create custom landing pages with ease. All this without writing any code!', 'legalblow' ); ?></p>
+							<p><?php esc_html_e( 'Are you looking for a WordPress theme to easily customize all aspects of your website? Look no further than LegalBlow WordPress Theme and Elementor Page Builder. This powerful combination allows users to easily customize the fundamental elements of their WordPress website with no coding needed. LegalBlow is an attractive and modern theme, allowing users to create beautiful websites in minutes. It features a mobile-friendly design, responsive layout, easy customization options, unlimited color schemes, a large collection of fonts and much more. With Elementor Page Builder users can quickly design stunning pages that look professional. Users have full control over what content is displayed where on their site as well as being able to create custom landing pages with ease. All this without writing any code!', 'legalblow' ); ?></p>
 						</div>
 					</div>
 				</div>
@@ -194,7 +194,7 @@ function legalblow_theme_info() {
 								<thead> 
 									<tr> 
 									 	<td class="thead-column1"><strong><h4><?php esc_html_e( 'Feature', 'legalblow' ); ?></h4></strong></td>
-										<td class="thead-column2"><strong><h4><?php esc_html_e( 'LegalPress Free', 'legalblow' ); ?></h4></strong></td>
+										<td class="thead-column2"><strong><h4><?php esc_html_e( 'LegalBlow Free', 'legalblow' ); ?></h4></strong></td>
 										<td class="thead-column3"><strong><h4><?php esc_html_e( 'Pro Addon Plugin', 'legalblow' ); ?></h4></strong></td>
 									</tr> 
 								</thead>

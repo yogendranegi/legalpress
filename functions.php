@@ -1,6 +1,6 @@
 <?php
 /**
- * LegalPress functions and definitions.
+ * LegalBlow functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -33,7 +33,7 @@ function legalblow_check_theme_setup( $oldtheme_name, $oldtheme ) {
 	function legalblow_php_admin_notice() {
 		?>
 			<div class="update-nag">
-		  		<?php esc_html_e( 'You need to update your PHP version to a minimum of 5.6 to run LegalPress Theme.', 'legalblow' ); ?> <br />
+		  		<?php esc_html_e( 'You need to update your PHP version to a minimum of 5.6 to run LegalBlow Theme.', 'legalblow' ); ?> <br />
 		  		<?php esc_html_e( 'Actual version is:', 'legalblow' ) ?> <strong><?php echo phpversion(); ?></strong>, <?php esc_html_e( 'required is', 'legalblow' ) ?> <strong><?php echo LEGALPRESS_REQUIRED_PHP_VERSION; ?></strong>
 			</div>
 		<?php
@@ -59,7 +59,7 @@ function legalblow_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on LegalPress, use a find and replace
+	 * If you're building a theme based on LegalBlow, use a find and replace
 	 * to change 'legalblow' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'legalblow', get_template_directory() . '/languages' );
@@ -127,7 +127,7 @@ function legalblow_setup() {
 	add_image_size( 'legalblow-posts', 765, 500, true );
 
 	/**
-	 * LegalPress custom posts thumbs size
+	 * LegalBlow custom posts thumbs size
 	 */
 	add_image_size( 'legalblow-posts-thumb', 150, 100, true );
 
@@ -137,7 +137,7 @@ function legalblow_setup() {
 	if(is_admin()) {
 		require get_template_directory() . '/inc/theme-info.php';
 		$config = array();
-		LegalPress_About_Page::legalblow_init( $config );
+		LegalBlow_About_Page::legalblow_init( $config );
 	}
 
 }
