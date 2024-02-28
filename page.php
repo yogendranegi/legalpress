@@ -9,25 +9,25 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package legalpress
+ * @package legalblow
  */
 
 get_header(); 
-// legalpress_before_title();
-if(true===get_theme_mod( 'legalpress_enable_page_title',true)) :
-	do_action('legalpress_get_page_title',false,false,false,false);
+// legalblow_before_title();
+if(true===get_theme_mod( 'legalblow_enable_page_title',true)) :
+	do_action('legalblow_get_page_title',false,false,false,false);
 endif;
-// legalpress_after_title();
+// legalblow_after_title();
 
 ?>
 <div class="page">
-	<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalpress_header_menu_style','style1')); ?> content-area">
-		<main id="main" class="site-main legalpress-main" role="main">
-			<div class="<?php echo (true===get_theme_mod( 'legalpress_enable_full_width_page_content',false)) ? 'content-inner': 'container' ?>">
+	<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalblow_header_menu_style','style1')); ?> content-area">
+		<main id="main" class="site-main legalblow-main" role="main">
+			<div class="<?php echo (true===get_theme_mod( 'legalblow_enable_full_width_page_content',false)) ? 'content-inner': 'container' ?>">
 				<div class="row">
 					<?php
 						while ( have_posts() ) : the_post();
-							// if ( legalpress_is_active_woocommerce() ) :
+							// if ( legalblow_is_active_woocommerce() ) :
 							// 	if ( is_page( 'cart' ) || is_cart() ) :
 							// 		get_template_part( 'template-parts/page/content', 'cart-page' );
 							// 	elseif ( is_page( 'checkout' ) || is_checkout() ) :

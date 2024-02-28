@@ -6,13 +6,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package legalpress
+ * @package legalblow
  */
 
 ?>
 	</div>
 	<!-- Begin Footer Section -->
-	<footer id="footer" class="legalpress-footer" itemscope itemtype="https://schema.org/WPFooter">
+	<footer id="footer" class="legalblow-footer" itemscope itemtype="https://schema.org/WPFooter">
 		<div class="container">
 			<div class="row">
 				<div class="footer-widgets-wrapper">
@@ -22,11 +22,11 @@
 			<div class="footer-copyrights-wrapper">
 				<?php
 			        /**
-			         * Hook - legalpress_action_footer.
+			         * Hook - legalblow_action_footer.
 			         *
-			         * @hooked legalpress_footer_copyrights - 10
+			         * @hooked legalblow_footer_copyrights - 10
 			         */
-			        do_action( 'legalpress_action_footer' );
+			        do_action( 'legalblow_action_footer' );
 		        ?>
 		    </div>
 		</div>

@@ -1183,7 +1183,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: -webkit-body;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1280,7 +1280,7 @@ h4,
 }
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 34px;
 }
 h6,
 .h6 {
@@ -1416,6 +1416,8 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: 10px;
+  text-align: justify;
+  position: absolute;
 }
 ul ul,
 ol ul,

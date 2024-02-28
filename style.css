@@ -1,5 +1,5 @@
 /*
-Theme Name: LegalPress
+Theme Name: LegalBlow
 Theme URI: #
 Author: #
 Author URI: #
@@ -11,7 +11,7 @@ Requires at least: 4.7
 Tags: blog, one-column, right-sidebar, left-sidebar, custom-header, featured-images, custom-menu, custom-logo, theme-options, threaded-comments, translation-ready, sticky-post, full-width-template, two-columns, three-columns
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: legalpress
+Text Domain: legalblow
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
@@ -848,6 +848,7 @@ input[type=submit] {
   padding: 10px 20px;
   border: none;
   transition: 0.3s;
+  background-color: #D2B48C;
 }
 
 blockquote p{
@@ -1536,6 +1537,10 @@ Blog
   width: 12px;
 }
 
+.meta {
+  text-align: right;
+}
+
 .blog .meta {
   margin-bottom: 20px;
 }
@@ -1658,7 +1663,7 @@ Header Style 1
 */
 
 .style1 #header-main {
-  margin-bottom: 20px;
+  margin-bottom: -110px;
 }
 
 .style1 .top-social-wrap {
@@ -1718,6 +1723,7 @@ Toggle button
 
 .top-menu .menu-header button {
   position: relative;
+
   /* display: block; */
   height: 36px;
   width: 42px;
@@ -2025,6 +2031,9 @@ footer .footer-widgets-wrapper > div {
   margin-bottom: 50px;
 }
 
+.footer-copyrights-wrapper {
+  text-align: center;
+}
 
 /**
 ====================================================================
@@ -2347,7 +2356,7 @@ Hidden buttons in the Header
 */ 
 
 .search-btn , .search , .blog-search , .search-closebtn , .searchsubmitmenu , .fas fa-search {
-  ;
+  
 }
 
 
@@ -2438,7 +2447,6 @@ Header Menu
 
 
 
-
 /**
 ====================================================================
 Header Section 1
@@ -2450,7 +2458,20 @@ Header Section 1
   text-align: right;
 }
 
-
 .topbar-info span {
   padding-left:12px;
 }
+
+
+/**
+====================================================================
+Blog page home
+====================================================================
+*/  
+
+/* .blog-post .image {
+  padding: 200px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+} */

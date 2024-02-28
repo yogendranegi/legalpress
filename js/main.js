@@ -12,7 +12,7 @@
             $(this).parent().toggleClass("menu-collapsed");
         });
 
-        /--- adding dropdown class to menu -----/
+        // adding dropdown class to menu
         $("ul.sub-menu").parent().addClass("dropdown");
         $("ul.sub-menu").addClass("dropdown-menu");
         $("ul#menuid li.dropdown a").addClass("dropdown-toggle");
@@ -20,7 +20,7 @@
         $('nav li.dropdown > a').append('<span class="caret"></span>');
         $('a.dropdown-toggle').attr('data-toggle', 'dropdown');
 
-        //Side Bar
+        // Side Bar
         function hdSideBarMenu() {
             $('.hd-bar .side-menu').find('.dropdown').children('ul').hide();
             $('.hd-bar .side-menu').find('li.dropdown > .fas').each(function () {
@@ -32,7 +32,7 @@
         }
         hdSideBarMenu();
 
-        //hd Sidebar
+        // hd Sidebar
         if ($('.hd-bar').length) {
             $('.hd-bar-opener').on('click', function () {
                 $('.hd-bar').addClass('visible-sidebar');
@@ -45,7 +45,7 @@
             });
         }
 
-        /-- Mobile menu --/
+        // Mobile menu
         if ($('#navbar-collapse-2').length) {
             $('#navbar-collapse-2 .navigation li.dropdown').append(function () {
                 return '<i class="fas fa-angle-down" aria-hd="true"></i>';
@@ -93,10 +93,10 @@
             }
         });
 
-        /-- tooltip --/
+        // /-- tooltip --/
         $('[data-toggle="tooltip"]').tooltip();
 
-        /-- Button Up --/
+        // /-- Button Up --/
         var btnUp = $('<div/>', { 'class': 'btntoTop' });
         btnUp.appendTo('body');
         $(document).on('click', '.btntoTop', function (e) {
@@ -113,16 +113,21 @@
                 $('.btntoTop').removeClass('active');
         });
 
-        /-- Sticky Sidebar --/
+
+        // Sticky Sidebar
         //$('#sidebar-wrapper, #post-wrapper').theiaStickySidebar({minWidth: 1024});
         //$('#content-main, #content-left, #content-right').theiaStickySidebar({minWidth: 1024});
 
-        /-- Remove hd bar for larger screens --/
+
+
+        // Remove hd bar for larger screens 
+
         if ($(window).width() > 991) {
             $('#hd-left-bar').remove();
         }
 
         /*-- Reload page when width is between 320 and 768px and only from desktop */
+
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
         $(window).on('resize', function () {
             var win = $(this); //this = window

@@ -4,15 +4,15 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package legalpress
+ * @package legalblow
  */
 
 get_header();
-// legalpress_before_title();
+// legalblow_before_title();
 ?>
 	<div class="page-title">
         <?php 
-		// legalpress_before_title_content();
+		// legalblow_before_title_content();
 		 ?>
 	        <div class="content-section">
 		        <div class="container">
@@ -20,22 +20,22 @@ get_header();
 		           		<?php echo the_archive_title(); ?>
 		        	</h1>
 		            <?php
-		                if(get_theme_mod( 'legalpress_enable_page_breadcrumbs',true)) :
-		                    do_action('legalpress_breadcrumbs_hook');
+		                if(get_theme_mod( 'legalblow_enable_page_breadcrumbs',true)) :
+		                    do_action('legalblow_breadcrumbs_hook');
 		                endif;
 		            ?>
 		        </div>
 		    </div>
 	    <?php 
-		// legalpress_after_title_content();
+		// legalblow_after_title_content();
 		 ?>
     </div>
 <?php
-// legalpress_after_title();
+// legalblow_after_title();
 ?>
 
-<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalpress_header_menu_style','style1')); ?> content-area">
-	<main id="main" class="site-main legalpress-main" role="main">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalblow_header_menu_style','style1')); ?> content-area">
+	<main id="main" class="site-main legalblow-main" role="main">
 		<div class="container">
 			<div id="blog-section">
 				<div class="row">
@@ -46,7 +46,7 @@ get_header();
 		        <div class="row">
 		        	<?php
 		        		if ( is_active_sidebar('sidebar-1')) :
-		        			if('right'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) :
+		        			if('right'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
 			        			?>
 			        				<div class="col-md-9">
 										<?php
@@ -72,7 +72,7 @@ get_header();
 						                <?php get_sidebar('sidebar-1'); ?>
 						            </div>
 			        			<?php
-		        			elseif('left'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) :
+		        			elseif('left'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
 			        			?>
 			        				<div class="col-md-3">
 						                <?php get_sidebar('sidebar-1'); ?>

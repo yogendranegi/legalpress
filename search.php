@@ -4,31 +4,31 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package legalpress
+ * @package legalblow
  */
 
 get_header();
-legalpress_before_title();
-do_action('legalpress_get_page_title',false,false,true,false);
-legalpress_after_title();
+legalblow_before_title();
+do_action('legalblow_get_page_title',false,false,true,false);
+legalblow_after_title();
 
 ?>
 
-<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalpress_header_menu_style','style1')); ?> content-area">
-	<main id="main" class="site-main legalpress-main" role="main">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalblow_header_menu_style','style1')); ?> content-area">
+	<main id="main" class="site-main legalblow-main" role="main">
 		<div class="content-blog searchpage">
 			<div class="container">
 				<div class="row">
 					<?php
 						if ( is_active_sidebar('sidebar-1')) :
-							if('right'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) :
+							if('right'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
 			        			?>
 									<div class="col-md-9">
 										<div id="primary" class="content-area">
 											<?php
 											if ( have_posts() ) : ?>
 												<div class="search-content">
-													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 												</div><!-- .page-header -->
 
 												<?php
@@ -53,7 +53,7 @@ legalpress_after_title();
 									<?php get_sidebar('sidebar-1'); ?>
 									</div>
 								<?php
-							elseif('left'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) :
+							elseif('left'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
 								?>
 									<div class="col-md-3">
 									<?php get_sidebar('sidebar-1'); ?>
@@ -64,7 +64,7 @@ legalpress_after_title();
 											if ( have_posts() ) : ?>
 
 												<div class="search-content">
-													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 												</div><!-- .page-header -->
 
 												<?php
@@ -94,7 +94,7 @@ legalpress_after_title();
 											if ( have_posts() ) : ?>
 
 												<div class="search-content">
-													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 												</div><!-- .page-header -->
 
 												<?php
@@ -125,7 +125,7 @@ legalpress_after_title();
 										if ( have_posts() ) : ?>
 
 											<div class="search-content">
-												<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+												<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 											</div><!-- .page-header -->
 
 											<?php

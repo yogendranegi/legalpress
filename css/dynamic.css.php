@@ -5,12 +5,12 @@
  */
 
 
-function legalpress_dynamic_css_stylesheet() {
+function legalblow_dynamic_css_stylesheet() {
 
-    $link_color= sanitize_hex_color(get_theme_mod( 'legalpress_link_color','#555' ));
-    $link_hover_color= sanitize_hex_color(get_theme_mod( 'legalpress_link_hover_color','#000' ));
-    $heading_color= sanitize_hex_color(get_theme_mod( 'legalpress_headings_title_color','#000' ));
-	$single_post_width= absint(get_theme_mod( 'legalpress_single_post_width',65));
+    $link_color= sanitize_hex_color(get_theme_mod( 'legalblow_link_color','#555' ));
+    $link_hover_color= sanitize_hex_color(get_theme_mod( 'legalblow_link_hover_color','#000' ));
+    $heading_color= sanitize_hex_color(get_theme_mod( 'legalblow_headings_title_color','#000' ));
+	$single_post_width= absint(get_theme_mod( 'legalblow_single_post_width',65));
 
     $css = '
 
@@ -110,7 +110,7 @@ function legalpress_dynamic_css_stylesheet() {
 
 ';
 
-if(false===get_theme_mod( 'legalpress_display_site_title_tagline',true)){
+if(false===get_theme_mod( 'legalblow_display_site_title_tagline',true)){
     $css .='
         h1.site-title,
         p.site-description{
@@ -120,7 +120,7 @@ if(false===get_theme_mod( 'legalpress_display_site_title_tagline',true)){
 }
 
 
-if(false===get_theme_mod( 'legalpress_enable_posts_cat',true)){
+if(false===get_theme_mod( 'legalblow_enable_posts_cat',true)){
     $css .='
         ul.post-categories {
         	display: none;
@@ -128,7 +128,7 @@ if(false===get_theme_mod( 'legalpress_enable_posts_cat',true)){
     ';
 }
 
-if(false===get_theme_mod( 'legalpress_enable_posts_meta_date',true)){
+if(false===get_theme_mod( 'legalblow_enable_posts_meta_date',true)){
     $css .='
         span.separator,
         span.date {
@@ -137,7 +137,7 @@ if(false===get_theme_mod( 'legalpress_enable_posts_meta_date',true)){
     ';
 }
 
-if(false===get_theme_mod( 'legalpress_enable_posts_meta_author',true)){
+if(false===get_theme_mod( 'legalblow_enable_posts_meta_author',true)){
     $css .='
         span.author,
         span.by{
@@ -146,7 +146,7 @@ if(false===get_theme_mod( 'legalpress_enable_posts_meta_author',true)){
     ';
 }
 
-if(false===get_theme_mod( 'legalpress_enable_posts_meta_comments',true)){
+if(false===get_theme_mod( 'legalblow_enable_posts_meta_comments',true)){
     $css .='
         span.comments{
         	display: none;
@@ -155,7 +155,7 @@ if(false===get_theme_mod( 'legalpress_enable_posts_meta_comments',true)){
 }
 
 
-if(false===get_theme_mod( 'legalpress_enable_single_post_cat',true)){
+if(false===get_theme_mod( 'legalblow_enable_single_post_cat',true)){
     $css .='
         .single div.post-categories {
         	display: none;
@@ -163,7 +163,7 @@ if(false===get_theme_mod( 'legalpress_enable_single_post_cat',true)){
     ';
 }
 
-if(false===get_theme_mod( 'legalpress_enable_single_post_tags',true)){
+if(false===get_theme_mod( 'legalblow_enable_single_post_tags',true)){
     $css .='
         .single div.post-tags {
         	display: none;
@@ -171,7 +171,7 @@ if(false===get_theme_mod( 'legalpress_enable_single_post_tags',true)){
     ';
 }
 
-if(false===get_theme_mod( 'legalpress_enable_single_post_meta_date',true)){
+if(false===get_theme_mod( 'legalblow_enable_single_post_meta_date',true)){
     $css .='
         .single span.date-single {
         	display: none;
@@ -179,7 +179,7 @@ if(false===get_theme_mod( 'legalpress_enable_single_post_meta_date',true)){
     ';
 }
 
-if(false===get_theme_mod( 'legalpress_enable_single_post_meta_author',true)){
+if(false===get_theme_mod( 'legalblow_enable_single_post_meta_author',true)){
     $css .='
         .single span.author-single {
         	display: none;
@@ -187,7 +187,7 @@ if(false===get_theme_mod( 'legalpress_enable_single_post_meta_author',true)){
     ';
 }
 
-if(false===get_theme_mod( 'legalpress_enable_single_post_meta_comments',true)){
+if(false===get_theme_mod( 'legalblow_enable_single_post_meta_comments',true)){
     $css .='
         .single span.comments-single {
         	display: none;
@@ -195,8 +195,8 @@ if(false===get_theme_mod( 'legalpress_enable_single_post_meta_comments',true)){
     ';
 }
 
-if('both-sidebars'===esc_html(get_theme_mod('legalpress_home_page_layout','both-sidebars'))) {
-    if ( is_active_sidebar( 'legalpress-hp-left-section' ) && is_active_sidebar( 'legalpress-hp-right-section' ) ) {
+if('both-sidebars'===esc_html(get_theme_mod('legalblow_home_page_layout','both-sidebars'))) {
+    if ( is_active_sidebar( 'legalblow-hp-left-section' ) && is_active_sidebar( 'legalblow-hp-right-section' ) ) {
         $css .='
 	        .both-sidebars .container {
 	        	width: 90%;
@@ -217,8 +217,8 @@ if('both-sidebars'===esc_html(get_theme_mod('legalpress_home_page_layout','both-
     ';
 }
 
-if('no-sidebars'===esc_html(get_theme_mod('legalpress_home_page_layout','both-sidebars'))) {
-    if ( is_active_sidebar( 'legalpress-hp-left-section' ) && is_active_sidebar( 'legalpress-hp-right-section' ) ) {
+if('no-sidebars'===esc_html(get_theme_mod('legalblow_home_page_layout','both-sidebars'))) {
+    if ( is_active_sidebar( 'legalblow-hp-left-section' ) && is_active_sidebar( 'legalblow-hp-right-section' ) ) {
         $css .='
 	        .no-sidebar .container {
 	        	width: 90%;
@@ -240,7 +240,7 @@ if('no-sidebars'===esc_html(get_theme_mod('legalpress_home_page_layout','both-si
 }
 
 
-if(true===get_theme_mod( 'legalpress_enable_single_post_full_width',false)){
+if(true===get_theme_mod( 'legalblow_enable_single_post_full_width',false)){
     $css .='
         .single .title, 
         .single .content,
@@ -251,6 +251,6 @@ if(true===get_theme_mod( 'legalpress_enable_single_post_full_width',false)){
     ';
 }
 
-return apply_filters( 'legalpress_dynamic_css_stylesheet', legalpress_minimize_css($css));
+return apply_filters( 'legalblow_dynamic_css_stylesheet', legalblow_minimize_css($css));
 
 }

@@ -6,7 +6,7 @@
  * 
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package legalpress
+ * @package legalblow
  */
 
 ?><!DOCTYPE html>
@@ -25,7 +25,7 @@
       else :
           do_action('wp_body_open');
       endif;
-      if(true === get_theme_mod( 'legalpress_enable_preloader',false )) :
+      if(true === get_theme_mod( 'legalblow_enable_preloader',false )) :
           ?>
             <!-- Begin Preloader -->
                 <div class="loader-wrapper lds-flickr">
@@ -37,9 +37,9 @@
           <?php
       endif;
       /**
-      * Hook - legalpress_action_header.
+      * Hook - legalblow_action_header.
       *
-      * @hooked legalpress_header_menu_styles - 10
+      * @hooked legalblow_header_menu_styles - 10
       */
-      do_action( 'legalpress_action_header' );
+      do_action( 'legalblow_action_header' );
   ?>

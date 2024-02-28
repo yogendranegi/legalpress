@@ -9,13 +9,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package legalpress
+ * @package legalblow
  */
 
 get_header();
-// legalpress_before_title();
-do_action('legalpress_get_page_title',true,false,false,false);
-// legalpress_after_title();
+// legalblow_before_title();
+do_action('legalblow_get_page_title',true,false,false,false);
+// legalblow_after_title();
 
 ?>
 
@@ -26,7 +26,7 @@ do_action('legalpress_get_page_title',true,false,false,false);
 		        <div class="row">
 		        	<?php
 		        		if ( is_active_sidebar('sidebar-1')) :
-		        			if('right'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) :
+		        			if('right'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
 		        				?>
 									<div id="post-wrapper" class="col-md-9">
 										<?php
@@ -52,7 +52,7 @@ do_action('legalpress_get_page_title',true,false,false,false);
 										<?php get_sidebar('sidebar-1'); ?>
 									</div>
 						    	<?php
-						    elseif('left'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) :
+						    elseif('left'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
     							?>
 									<div id="sidebar-wrapper" class="col-md-3">
 										<?php get_sidebar('sidebar-1'); ?>
