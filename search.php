@@ -4,97 +4,120 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package legalpress
+ * @package legalblow
  */
 
 get_header();
-legalpress_before_title();
-legalpress_after_title();
+legalblow_before_title();
+do_action('legalblow_get_page_title',false,false,true,false);
+legalblow_after_title();
+
 ?>
 
-<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalpress_header_menu_style','style1')); ?> content-area">
-	<main id="main" class="site-main" role="main">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalblow_header_menu_style','style1')); ?> content-area">
+	<main id="main" class="site-main legalblow-main" role="main">
 		<div class="content-blog searchpage">
-			<div class="content-inner">
+			<div class="container">
 				<div class="row">
 					<?php
-		        		if('right'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) {
-		        			?>
-								<div class="col-md-9">
-									<div id="primary" class="content-area">
-										<?php
-										if ( have_posts() ) : ?>
-
-											<div class="search-content">
-												<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-											</div><!-- .page-header -->
-
+						if ( is_active_sidebar('sidebar-1')) :
+							if('right'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
+			        			?>
+									<div class="col-md-9">
+										<div id="primary" class="content-area">
 											<?php
-											/* Start the Loop */
-											while ( have_posts() ) : the_post();
+											if ( have_posts() ) : ?>
+												<div class="search-content">
+													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+												</div><!-- .page-header -->
 
-												/**
-												 * Run the loop for the search to output the results.
-												 * If you want to overload this in a child theme then include a file
-												 * called content-search.php and that will be used instead.
-												 */
-												get_template_part( 'template-parts/post/content', 'search' );
+												<?php
+												/* Start the Loop */
+												while ( have_posts() ) : the_post();
 
-											endwhile;
+													/**
+													 * Run the loop for the search to output the results.
+													 * If you want to overload this in a child theme then include a file
+													 * called content-search.php and that will be used instead.
+													 */
+													get_template_part( 'template-parts/post/content', 'search' );
 
-											the_posts_navigation();
-
-										else :
-
-											get_template_part( 'template-parts/post/content', 'none' );
-
-										endif; ?>
+												endwhile;
+												the_posts_navigation();
+											else :
+												get_template_part( 'template-parts/post/content', 'none' );
+											endif; ?>
+										</div>
 									</div>
-								</div>
-								<div class="col-md-3">
-								<?php get_sidebar('sidebar-1'); ?>
-								</div>
-							<?php
-						}
-						else if('left'===esc_html(get_theme_mod('legalpress_blog_sidebar_layout','right'))) {
-							?>
-								<div class="col-md-3">
-								<?php get_sidebar('sidebar-1'); ?>
-								</div>
-								<div class="col-md-9">
-									<div id="primary" class="content-area">
-										<?php
-										if ( have_posts() ) : ?>
-
-											<div class="search-content">
-												<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-											</div><!-- .page-header -->
-
+									<div class="col-md-3">
+									<?php get_sidebar('sidebar-1'); ?>
+									</div>
+								<?php
+							elseif('left'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
+								?>
+									<div class="col-md-3">
+									<?php get_sidebar('sidebar-1'); ?>
+									</div>
+									<div class="col-md-9">
+										<div id="primary" class="content-area">
 											<?php
-											/* Start the Loop */
-											while ( have_posts() ) : the_post();
+											if ( have_posts() ) : ?>
 
-												/**
-												 * Run the loop for the search to output the results.
-												 * If you want to overload this in a child theme then include a file
-												 * called content-search.php and that will be used instead.
-												 */
-												get_template_part( 'template-parts/post/content', 'search' );
+												<div class="search-content">
+													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+												</div><!-- .page-header -->
 
-											endwhile;
+												<?php
+												/* Start the Loop */
+												while ( have_posts() ) : the_post();
 
-											the_posts_navigation();
+													/**
+													 * Run the loop for the search to output the results.
+													 * If you want to overload this in a child theme then include a file
+													 * called content-search.php and that will be used instead.
+													 */
+													get_template_part( 'template-parts/post/content', 'search' );
 
-										else :
+												endwhile;
+												the_posts_navigation();
+											else :
+												get_template_part( 'template-parts/post/content', 'none' );
+											endif; ?>
+										</div>
+									</div>									
+								<?php
+							else :
+								?>
+									<div class="col-md-12">
+										<div id="primary" class="content-area">
+											<?php
+											if ( have_posts() ) : ?>
 
-											get_template_part( 'template-parts/post/content', 'none' );
+												<div class="search-content">
+													<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+												</div><!-- .page-header -->
 
-										endif; ?>
+												<?php
+												/* Start the Loop */
+												while ( have_posts() ) : the_post();
+
+													/**
+													 * Run the loop for the search to output the results.
+													 * If you want to overload this in a child theme then include a file
+													 * called content-search.php and that will be used instead.
+													 */
+													get_template_part( 'template-parts/post/content', 'search' );
+
+												endwhile;
+												the_posts_navigation();
+											else :
+												get_template_part( 'template-parts/post/content', 'none' );
+											endif; ?>
+										</div>
 									</div>
-								</div>									
-							<?php
-						}
-						else{
+								<?php
+							endif;
+						else:
 							?>
 								<div class="col-md-12">
 									<div id="primary" class="content-area">
@@ -102,7 +125,7 @@ legalpress_after_title();
 										if ( have_posts() ) : ?>
 
 											<div class="search-content">
-												<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+												<h1 class="page-search"><?php printf( esc_html__( 'Search Results for: %s', 'legalblow' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 											</div><!-- .page-header -->
 
 											<?php
@@ -117,18 +140,14 @@ legalpress_after_title();
 												get_template_part( 'template-parts/post/content', 'search' );
 
 											endwhile;
-
 											the_posts_navigation();
-
 										else :
-
 											get_template_part( 'template-parts/post/content', 'none' );
-
 										endif; ?>
 									</div>
 								</div>
 							<?php
-						}
+						endif;
 					?>
 				</div>
 			</div>
