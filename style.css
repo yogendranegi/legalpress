@@ -404,6 +404,7 @@ hr {
 .row {
   margin-left: -15px;
   margin-right: -15px;
+  
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
@@ -780,6 +781,8 @@ a:focus{
 img {
   max-width: 100%;
   height: auto;
+  aspect-ratio: 2;
+
 }
 
 
@@ -1426,6 +1429,7 @@ a {
   color: #676767;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  /* display: inline-flex; */
 }
 
 a:hover,a:focus {
@@ -1445,6 +1449,7 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
   font-size: 28px;
+  
 }
 
 h2 {
@@ -1466,6 +1471,7 @@ h5 {
 h6 {
   font-size: 12px;
 }
+
 
 /**
 ====================================================================
@@ -1538,7 +1544,7 @@ Blog
 }
 
 .meta {
-  text-align: right;
+  text-align: left;
 }
 
 .blog .meta {
@@ -1554,7 +1560,7 @@ Blog
 .blog time.published,
 .author time.published,
 .archive time.published {
-  display: block;
+  /* display: block; */
 }
 
 .archive time.published.updated, 
@@ -1790,8 +1796,8 @@ Left Popup Sidebar
 }
 
 .hd-bar .hd-bar-closer {
-  float: right;
-  margin-right: 35px;
+  float: left;
+  margin-left: 35px;
 }
 
 .admin-bar .hd-bar .hd-bar-closer {
@@ -2187,8 +2193,8 @@ ol.children li {
 }
 
 .single .post-navigation h3 {
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .widget-column a {
@@ -2454,8 +2460,9 @@ Header Section 1
 */  
 
 #topbar{
-  background: darkseagreen;
+  background: #184547;
   text-align: right;
+  height: 30px;
 }
 
 .topbar-info span {
@@ -2475,3 +2482,211 @@ Blog page home
   padding-bottom: 0px;
 
 } */
+
+
+.meta ul {
+      position: relative;
+}
+
+
+/**
+====================================================================
+Single post page - Updated on (date)
+====================================================================
+*/  
+.updated {
+  display: none;
+}
+
+.image {
+  aspect-ratio: 1.6;
+}
+
+
+/**
+====================================================================
+Categories on Single post page
+====================================================================
+*/  
+.post-categories {
+  margin-top:30px;
+}
+
+
+/**
+====================================================================
+Line after Image on Single post page
+====================================================================
+*/  
+.wp-block-separator {
+  margin-top: -140px;
+}
+
+
+/**
+====================================================================
+Previous and Next article
+====================================================================
+*/  
+
+.nav-links .nav-previous,
+.nav-next{
+  display: inline-block;
+  
+}
+
+.nav-next{
+  float: right;
+}
+
+
+/**
+====================================================================
+Post desciption
+====================================================================
+*/  
+.content {
+  margin-top: -20px;
+}
+
+.blog .image img{
+height: 270px;
+}
+
+
+/**
+====================================================================
+Left search sidebar
+====================================================================
+*/  
+.single .widget-area {
+  margin-top: 46px;
+
+}
+
+
+
+/**
+====================================================================
+Image fadein and fadeout
+====================================================================
+*/  
+/* .blog .image:hover img{
+transform: scale(1.5);
+}
+
+.blog .image{
+  overflow:hidden;
+  transition: transform 3s;
+} */
+
+
+/**
+====================================================================
+Sidebar-wrapper box layout
+====================================================================
+*/  
+.widget-title {
+  padding: 20px;
+        background-color: #f0f0f0;
+        border-bottom: 1px solid #ccc; 
+}
+
+
+#blog-section .main-title{
+  display: none;
+}
+
+.content-section {
+margin-top: 20px;
+}
+
+/* .blog-post .image{
+  max-width: 100%;
+  aspect-ratio: 2;
+} */
+
+
+.meta .meta-list{    
+  display: inline-flex;
+  /* text-align: left; */
+}
+
+
+
+/**
+====================================================================
+Archive all post page 
+====================================================================
+*/  
+.archive .content {
+   margin-top: 10px;
+
+}
+
+.archive .image img{
+  height: 270px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  }
+  
+  .archive .blog-excerpt .read-more{
+    margin-top: 45px;
+  
+  }
+  
+  .page-title .main-title{
+    text-align: left;
+  }
+
+
+
+  /**
+====================================================================
+480 Resolution 
+====================================================================
+*/  
+
+@media only screen and (max-width: 480px) {
+  
+  .archive .content {
+    margin-top: 10px;
+ 
+ }
+ 
+ .archive .image img{
+   height: 270px;
+   margin-bottom: -20px;
+   margin-top: 40px;
+   }
+   
+   .archive .blog-excerpt .read-more{
+     margin-top: 18px;
+   
+   }
+   
+   .page-title .main-title{
+     text-align: left;
+   }
+
+   .row {
+    margin-top:-35px;    
+  }
+  
+  .entry-content {
+    margin-top: 43px;
+  }
+
+  .blog-excerpt .entry-content {
+    margin-top: 1px;
+  }
+
+  .blog-post .image{
+    margin-top: 30px;
+  }
+}
+
+#topbar .topbar-main{
+  height: 39px;
+
+}

@@ -279,6 +279,7 @@ add_filter('excerpt_length', 'legalblow_my_excerpt_length');
  */
 function legalblow_scripts() {
 	wp_register_style( 'legalblow-main', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
 
 	wp_enqueue_style( 'legalblow-main' );
 	if(get_theme_mod( 'legalblow_enable_poppings_font',false)) :
@@ -302,6 +303,8 @@ function legalblow_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) :
 		wp_enqueue_script( 'comment-reply' );
 	endif;
+
+	
 }
 add_action( 'wp_enqueue_scripts', 'legalblow_scripts' );
 

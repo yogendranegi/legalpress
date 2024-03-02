@@ -57,13 +57,10 @@
                                     endif;
                                     if(in_array("date", $cb_values)) :
                                         ?>
-                                            <li class="date-meta">
-                                                <span class="post-day-icon">
-                                                    <span class="post-day-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><path fill="#626262" d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8s8-3.6 8-8s-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6s6 2.7 6 6s-2.7 6-6 6z"/><path fill="#626262" d="M8 3H7v6h5V8H8z"/><rect x="0" y="0" width="16" height="16" fill="rgba(0, 0, 0, 0)" /></svg>
-                                                </span>
-                                                <?php legalblow_posted_on(); ?>
-                                            </li>
+                                             <li class="date-meta">
+                                                    <span class="post-day-icon meta-icon"><i class="fa fa-calendar"></i>
+                                                    <?php legalblow_posted_on(); ?>
+                                                </li>
                                         <?php
                                     endif;
                                     if(in_array("comments", $cb_values)) :
