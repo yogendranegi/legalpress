@@ -1132,6 +1132,8 @@ Navigation
   position: relative;
   margin: 0;
   display: inline-block;
+  margin-top: -16px;
+
 }
 
 .top-menu .navigation > li {
@@ -1694,7 +1696,8 @@ Header Style 1
   width: 25%;
   padding: 0;
   text-align: left;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+
 }
 
 .style1 .top-menu-wrapper {
@@ -1705,6 +1708,8 @@ Header Style 1
 
 .style1 .top-menu {
   text-align: center;
+  left: 195px;
+
 }
 
 .style1 h1.site-title,
@@ -1760,29 +1765,29 @@ Toggle button
 
 /**
 ====================================================================
-Left Popup Sidebar
+  Left Popup Sidebar
 ====================================================================
 */
 
 .hd-bar {
   position: fixed;
+  top: 0;
   width: 100%;
   height: 100%;
-  background: #efefef;
+  background: #000;
   z-index: 9999;
 }
 
-.hd-bar .mCSB_inside > .mCSB_container {
-  margin-right: 0;   
+.hd-bar .mCSB_inside>.mCSB_container {
+  margin-right: 0;
 }
 
 .hd-bar.left-align {
   left: -400px;
-  visibility: hidden;
 }
 
 .hd-bar.left-align.visible-sidebar {
-  left: 0px;   
+  left: 0px;
 }
 
 .hd-bar.left-align {
@@ -1792,32 +1797,34 @@ Left Popup Sidebar
 .hd-bar.left-align.visible-sidebar {
   left: 0%;
   display: none;
-  visibility: hidden;
 }
 
 .hd-bar .hd-bar-closer {
-  float: left;
-  margin-left: 35px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 80px;
+  top: 5px;
+  background: none;
+  color: #ffffff;
+  border-radius: 0px;
+  text-align: center;
+  line-height: 40px;
+  z-index: 999999;
 }
 
 .admin-bar .hd-bar .hd-bar-closer {
   top: 40px;
-  margin-top: 35px;
 }
 
 .hd-bar .hd-bar-closer button {
   background: none;
   display: block;
   font-size: 20px;
-  color: #555 !important;
+  color: #b3b1b1 !important;
   width: 40px;
   height: 40px;
   line-height: 40px;
-}
-
-.hd-bar .hd-bar-close {
-  font-size: 0px;
-  margin: 15px 15px;
 }
 
 .hd-bar .hd-bar-closer:hover button {
@@ -1826,10 +1833,8 @@ Left Popup Sidebar
 
 .hd-bar-wrapper {
   height: 100%;
-  padding: 15px 30px 40px;
+  padding: 45px 30px 40px;
   padding-right: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .hd-bar-wrapper .mCustomScrollBox {
@@ -1850,15 +1855,17 @@ Left Popup Sidebar
 
 .hd-bar .side-menu ul li ul li ul li a {
   background: transparent;
+  text-transform: uppercase;
   padding-left: 22px;
   font-size: 13px;
+  color: rgba(255, 255, 255, 0.50);
 }
 
 .hd-bar .side-menu a.current {
   color: #c5a47e;
 }
 
-.hd-bar .side-menu li.current > a {
+.hd-bar .side-menu li.current>a {
   color: #c5a47e;
 }
 
@@ -1869,34 +1876,30 @@ Left Popup Sidebar
 .hd-bar .side-menu ul li {
   position: relative;
   display: block;
-  border-bottom: 1px solid #dedede;   
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.hd-bar .side-menu ul li ul li:first-child {
-  border-top: 1px solid #dedede;   
-}
-
-.hd-bar .side-menu ul .dropdown:focus-within > ul {
+.hd-bar .side-menu ul .dropdown:focus-within>ul {
   display: block !important;
 }
 
-.hd-bar .side-menu > ul > li > ul {
+.hd-bar .side-menu>ul>li>ul {
   background-color: #2a2a2a;
 }
 
-.hd-bar .side-menu ul.navigation > li > ul > li {
+.hd-bar .side-menu ul.navigation>li>ul>li {
   margin-left: 50px;
 }
 
-.hd-bar .side-menu ul.navigation > li > ul > li ul {
+.hd-bar .side-menu ul.navigation>li>ul>li ul {
   margin-left: 50px;
 }
 
-.hd-bar .side-menu ul.navigation > li > ul > li:first-child {
-  border-top: 1px solid #dfdfdf;
+.hd-bar .side-menu ul.navigation>li>ul>li:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.hd-bar .side-menu ul.navigation > li > ul > li:last-child {
+.hd-bar .side-menu ul.navigation>li>ul>li:last-child {
   border-bottom: none;
 }
 
@@ -1905,6 +1908,7 @@ Left Popup Sidebar
   color: #ffffff;
   display: inline-block;
   font-weight: 400;
+  text-transform: uppercase;
   padding: 12px 15px 12px 15px;
   position: relative;
   cursor: pointer;
@@ -1915,39 +1919,55 @@ Left Popup Sidebar
   text-align: left;
 }
 
-.hd-bar .side-menu ul li span.menu-bubble-description {
-  display: none;
-}
-
-.hd-bar .side-menu ul.navigation > li > ul > li > a {
+.hd-bar .side-menu ul.navigation>li>ul>li>a {
+  text-transform: uppercase;
   padding-left: 22px;
   font-size: 12px;
+  color: rgba(255, 255, 255, 0.50);
 }
 
-.hd-bar .side-menu ul.navigation > li > ul > li.dropdown > a {
-  padding-left: 22px;  
+.hd-bar .side-menu ul.navigation>li>ul>li.dropdown>a {
+  padding-left: 22px;
 }
 
-.hd-bar .side-menu ul.navigation > li > ul > li.dropdown {
+.hd-bar .side-menu ul.navigation>li>ul>li.dropdown {
   width: auto;
 }
 
 .hd-bar .side-menu ul li a:hover,
-.hd-bar .side-menu ul > li.current > a,
-.hd-bar .side-menu ul > li > ul > li.current > a,
-.hd-bar .side-menu ul.navigation > li > ul > li > a:hover,
-.hd-bar .side-menu ul.navigation > li.active > a {
-  color: #bc2a26;
+.hd-bar .side-menu ul>li.current>a,
+.hd-bar .side-menu ul>li>ul>li.current>a,
+.hd-bar .side-menu ul.navigation>li>ul>li>a:hover,
+.hd-bar .side-menu ul.navigation>li.active>a {
+  color: #000;
+}
+
+.hd-bar .side-menu ul li.dropdown .fas {
+  position: absolute;
+  z-index: 99;
+  width: 60px;
+  right: 0;
+  top: 0;
+  line-height: 50px;
+  border-left: 1px solid rgba(130, 130, 130, 0.58);
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .qb-close-button:before {
-  content: "\2715";
-  padding-right: 20px;
-  font-family: 'Poppins', sans-serif;
+  content: "\f00d";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 700;
+  padding-right: 5px;
+
 }
 
 .side-navigation .navigation .dropdown-menu {
-  position:relative;
+  position: relative;
   z-index: 1;
   display: block;
   float: none;
@@ -1966,58 +1986,62 @@ Left Popup Sidebar
   box-shadow: none;
 }
 
-#navbar-collapse-2 .navigation li.dropdown .angle-down {
+#navbar-collapse-2 .navigation li.dropdown .fas {
   display: none;
   position: absolute;
   z-index: 99;
-  width: 80px;
+  width: 60px;
   right: 0;
   top: 0;
   line-height: 50px;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
   color: #b3b3b9;
   font-size: 18px;
   text-align: center;
-  border-left: 1px solid #d8d8d8;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-#navbar-collapse-2 .navigation li.dropdown .angle-down span {
-  position: relative;
-  display: inline-block;
-  width: 10px;
-  height: 1px;
-  background: black;
-  vertical-align: super;
-  transform: rotate(55deg);
-  transform-origin: 0% 0%;
-}
-
-#navbar-collapse-2 .navigation li.dropdown .angle-down span:after {
- content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 100%;
-  background: black;
-  transform: rotate(-110deg);
-  transform-origin: 0% 100%;
-}
-
-.side-navigation .navigation .dropdown-menu{
+.side-navigation .navigation .dropdown-menu {
   margin-right: 50px;
 }
 
 #navbar-collapse-2 .navigation li a span.caret {
   display: none;
-} 
+}
 
 
 .hd-bar .side-menu ul li:last-child {
   border-bottom: none;
 }
+
+.hd-bar .search-form-wrapper {
+  margin-top: 70px;
+}
+
+.hd-bar .search-form-wrapper input {
+  float: left;
+  width: 75%;
+  height: 50px;
+  padding: 20px;
+  border: none;
+}
+
+.hd-bar .search-form-wrapper button[type=submit] {
+  float: left;
+  width: 25%;
+  padding: 14px 16px;
+  height: 50px;
+  border: none;
+}
+
+.hd-bar .search-form-wrapper::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 /**
 ====================================================================
@@ -2439,7 +2463,7 @@ Header Menu
     font-weight: bold;
     text-transform: uppercase;
     POSITION: relative;
-    left: 385px;
+    left: 195px;
     bottom: 55px;
 
     }
@@ -2462,7 +2486,7 @@ Header Section 1
 #topbar{
   background: #184547;
   text-align: right;
-  height: 30px;
+  height: 45px;
 }
 
 .topbar-info span {
@@ -2688,5 +2712,19 @@ Archive all post page
 
 #topbar .topbar-main{
   height: 39px;
+
+}
+
+
+ /**
+====================================================================
+Topbar- Contact and Email
+====================================================================
+*/  
+
+.topbar-info{
+  margin-top: 10px;
+  color: white;
+  /* padding-right: 0px; */
 
 }
