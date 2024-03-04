@@ -1708,7 +1708,7 @@ Header Style 1
 
 .style1 .top-menu {
   text-align: center;
-  left: 195px;
+  margin-left: 212px;
 
 }
 
@@ -2463,7 +2463,7 @@ Header Menu
     font-weight: bold;
     text-transform: uppercase;
     POSITION: relative;
-    left: 195px;
+    left: 285px;
     bottom: 55px;
 
     }
@@ -2471,7 +2471,7 @@ Header Menu
     position: relative;
     display: inline-block;
     padding: 0;
-    left: 140px;
+    left: 235px;
     bottom: 55px;
 }
 
@@ -2664,6 +2664,26 @@ Archive all post page
   }
 
 
+ /**
+====================================================================
+Topbar- Contact and Email
+====================================================================
+*/  
+
+.topbar-info{
+  margin-top: 10px;
+  color: white;
+  /* padding-right: 0px; */
+
+}
+
+
+
+
+
+
+
+
 
   /**
 ====================================================================
@@ -2715,16 +2735,8 @@ Archive all post page
 
 }
 
-
- /**
-====================================================================
-Topbar- Contact and Email
-====================================================================
-*/  
-
-.topbar-info{
-  margin-top: 10px;
-  color: white;
-  /* padding-right: 0px; */
+.menu-header .hd-bar-opener{
+  left: 50px;
 
 }
+
