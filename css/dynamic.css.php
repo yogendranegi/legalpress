@@ -128,6 +128,14 @@ if(false===get_theme_mod( 'legalblow_enable_posts_cat',true)){
     ';
 }
 
+if(false===get_theme_mod( 'legalblow_enable_header_menu_align',true)){
+    $css .='
+        .navigation>li {
+        	display: none;
+        }
+    ';
+}
+
 if(false===get_theme_mod( 'legalblow_enable_posts_meta_date',true)){
     $css .='
         span.separator,
@@ -214,6 +222,15 @@ if('both-sidebars'===esc_html(get_theme_mod('legalblow_home_page_layout','both-s
         	width: 90% !important;
         	max-width: 90% !important;
         }
+    ';
+}
+
+if(false===get_theme_mod( 'legalblow_enable_header_menu_align',true)){
+    $css .='
+    .style1 .top-menu {
+        text-align: left;
+        
+    }
     ';
 }
 

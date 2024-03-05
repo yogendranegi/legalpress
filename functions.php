@@ -215,17 +215,10 @@ function legalblow_widgets_init() {
         ) );
     endfor;
 
-    if(get_theme_mod( 'legalblow_enable_header_topbar',true)):
+    if(get_theme_mod( 'legalblow_enable_header_topbar',false)):
     	register_sidebar( array(
-			'name'          => esc_html__( 'Top Bar Left Column', 'legalblow' ),
-			'id'            => 'topbar-left',
-			'description'   => esc_html__( 'Add widgets here.', 'legalblow' ),
-			'before_widget' => '<div id="%1$s" class="section %2$s">',
-            'after_widget'  => '</div>',
-		) );
-		register_sidebar( array(
-			'name'          => esc_html__( 'Top Bar Right Column', 'legalblow' ),
-			'id'            => 'topbar-right',
+			'name'          => esc_html__( 'TopBar', 'legalblow' ),
+			'id'            => 'topbar',
 			'description'   => esc_html__( 'Add widgets here.', 'legalblow' ),
 			'before_widget' => '<div id="%1$s" class="section %2$s">',
             'after_widget'  => '</div>',
@@ -378,3 +371,5 @@ add_filter( 'get_search_form', 'legalblow_search_form', 100 );
 require get_parent_theme_file_path() . '/inc/template-functions.php'; 
 
 require get_parent_theme_file_path() . '/inc/template-tags.php'; 
+
+require get_parent_theme_file_path() . '/inc/customizer/customizer.php'; 

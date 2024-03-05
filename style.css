@@ -1133,7 +1133,8 @@ Navigation
   margin: 0;
   display: inline-block;
   margin-top: -16px;
-
+  width: 100%;
+text-align: center;
 }
 
 .top-menu .navigation > li {
@@ -1380,6 +1381,9 @@ Navigation
 .main-header .top-menu-wrapper {
   position: relative;
 }
+.top-menu-wrapper{
+margin-top: 35px;
+}
 
 .main-header .outer-box {
   position: absolute;
@@ -1562,7 +1566,6 @@ Blog
 .blog time.published,
 .author time.published,
 .archive time.published {
-  /* display: block; */
 }
 
 .archive time.published.updated, 
@@ -1670,9 +1673,6 @@ Header Style 1
 ====================================================================
 */
 
-.style1 #header-main {
-  margin-bottom: -110px;
-}
 
 .style1 .top-social-wrap {
   text-align: right;
@@ -1691,27 +1691,6 @@ Header Style 1
   padding-right: 20px;
 }
 
-.style1 .header-wrapper .logo {
-  float: left;
-  width: 25%;
-  padding: 0;
-  text-align: left;
-  /* margin-top: 20px; */
-
-}
-
-.style1 .top-menu-wrapper {
-  width: 75%;
-  border: none;
-  margin-bottom: 20px;
-}
-
-.style1 .top-menu {
-  text-align: center;
-  margin-left: 212px;
-
-}
-
 .style1 h1.site-title,
 .style1 p.site-title {
   padding: 0;
@@ -1721,16 +1700,23 @@ header .header-inner {
   margin: 10px 0;
 }
 
+.top-menu .navigation > li:last-child {
+  float: right;
+  margin-top: 10px;
+}
+
+.top-menu .navigation > li:last-child a {
+    background: #130b8a;
+    color: #fff;
+    padding: 2px 20px;
+    border-radius: 5px 
+}
+
 /**
 ====================================================================
 Toggle button
 ====================================================================
 */
-
-.top-menu .menu-header {
-  padding-left: 128%;
-  position: absolute;
-}
 
 .top-menu .menu-header button {
   position: relative;
@@ -2258,6 +2244,7 @@ Responsive CSS
       padding: 4px 10px;
       font-size: 10px;
       right: 11px;
+
   }
 
   .footer-widgets-wrapper .widget-column.align-right {
@@ -2322,6 +2309,8 @@ Single Post
 
   #navbar-collapse-2 .navigation li.dropdown .angle-down {
       display: block;
+      margin-left: -105px;
+
   }   
 }
 
@@ -2364,6 +2353,13 @@ Single Post
 
 
 
+  /**
+====================================================================
+991 Resolution 
+====================================================================
+*/ 
+
+
 /**
 ====================================================================
 Footer menu wrapper
@@ -2393,14 +2389,6 @@ Hidden buttons in the Header
 #navbar-collapse-1 {
   margin-top: 15px;
 }
-
-
-.top-menu-wrapper {  
-    padding-bottom: 20px;
-    padding-left: 60px;
-    /* padding-right: 70px; */
-  }
-
 
 
 
@@ -2457,6 +2445,7 @@ Header Menu
 ====================================================================
 */ 
 
+/*
 .top-menu .navigation>li:last-child {
     background-color: #D2B48C;
     border-radius: 5px;
@@ -2474,7 +2463,7 @@ Header Menu
     left: 235px;
     bottom: 55px;
 }
-
+*/
 
 
 /**
@@ -2526,7 +2515,9 @@ Single post page - Updated on (date)
   aspect-ratio: 1.6;
 }
 
-
+.author-inner , .posted-on .date-meta{
+  display: inline-block;
+}
 /**
 ====================================================================
 Categories on Single post page
@@ -2570,7 +2561,7 @@ Post desciption
 ====================================================================
 */  
 .content {
-  margin-top: -20px;
+  margin-top: -50px;
 }
 
 .blog .image img{
@@ -2691,7 +2682,7 @@ Topbar- Contact and Email
 ====================================================================
 */  
 
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: px) {
   
   .archive .content {
     margin-top: 10px;
@@ -2740,3 +2731,39 @@ Topbar- Contact and Email
 
 }
 
+.top-menu .navigation > li > a {
+  position: relative;
+  display: block;
+  line-height: 30px;
+  padding: 12px 18px;
+  font-size: 12px;
+  color: #0c0303
+  opacity: 1;
+  letter-spacing: 1px;
+}
+
+.style1 .top-menu {
+  text-align: center;
+   margin-left: -180px;
+
+}
+
+
+/* @media only screen and (max-width: 991px) {
+.top-menu .navigation > li > a {
+  position: relative;
+  display: block;
+  line-height: 30px;
+  padding: 12px 18px;
+  font-size: 12px;
+  color: #0c0303
+  opacity: 1;
+  letter-spacing: 1px;
+}
+
+.style1 .top-menu {
+  text-align: center;
+   margin-left: -180px;
+
+}
+} */ */

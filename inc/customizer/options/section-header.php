@@ -68,25 +68,6 @@ function legalblow_customizer_header_register( $wp_customize ) {
 	));
 
 
-	// Info label
-    $wp_customize->add_setting( 
-        'legalblow_label_top_bar_info', 
-        array(
-            'sanitize_callback' => 'legalblow_sanitize_title',
-        ) 
-    );
-
-    $wp_customize->add_control( 
-        new LegalBlow_Info_Control( $wp_customize, 'legalblow_label_top_bar_info', 
-        array(
-            'label'       => esc_html__( 'To show content in top bar, Go to Appearance -> Widgets and add widgets inside the Top Bar Left Column and Top Bar Right Column', 'legalblow' ),
-            'section'     => 'legalblow_header_topbar_settings',
-            'type'        => 'legalblow-info',
-            'settings'    => 'legalblow_label_top_bar_info',
-            'active_callback' => '',
-        ) 
-    ));
-
 	// Section Menu ===================================================
     $wp_customize->add_section(
         'legalblow_header_menu_settings',
