@@ -111,7 +111,7 @@
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-							</div>
+							</div>						
 							<div class="navbar-collapse collapse clearfix" id="navbar-collapse-1">
 								<?php
 									wp_nav_menu( array(			                  	

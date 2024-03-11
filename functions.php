@@ -328,6 +328,21 @@ function legalblow_search_form( $form ) {
 }
 add_filter( 'get_search_form', 'legalblow_search_form', 100 );
 
+
+/**
+ * Display Dynamic CSS.
+ */
+function legalblow_dynamic_css_wrap() {
+	require_once( get_parent_theme_file_path( '/css/dynamic.css.php' ) );  
+	?>
+  		<style type="text/css" id="legalblow-dynamic-style">
+    		<?php echo legalblow_dynamic_css_stylesheet(); ?>
+  		</style>
+	<?php 
+}
+add_action( 'wp_head', 'legalblow_dynamic_css_wrap' );
+
+
 /*
 
 

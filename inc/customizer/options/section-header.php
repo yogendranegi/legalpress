@@ -101,7 +101,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
 	$wp_customize->add_setting( 
 		'legalblow_enable_header_menu_align', 
 		array(
-		    'default'           => true,
+		    'default'           => false,
 		    'type'              => 'theme_mod',
 		    'sanitize_callback' => 'legalblow_sanitize_checkbox',
 		) 
@@ -139,7 +139,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
     $wp_customize->add_setting( 
         'legalblow_menu_items_spacing', 
         array(
-            'default' => 18,
+            'default' => 16,
             'sanitize_callback' => 'absint',
         ) 
     );
@@ -148,7 +148,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
         new LegalBlow_Slider_Control( $wp_customize, 'legalblow_menu_items_spacing', 
         array(
             'label' => esc_html__( 'Menu Items Spacing(px)','legalblow' ),
-            'description' => esc_html__( 'Default is 18','legalblow' ),
+            'description' => esc_html__( 'Default is 16','legalblow' ),
             'section' => 'legalblow_header_menu_settings',
             'input_attrs' => array(
                 'min' => 0, 
@@ -181,7 +181,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
     $wp_customize->add_setting( 
         'legalblow_menu_spacing_from_top', 
         array(
-            'default' => 20,
+            'default' => 0,
             'sanitize_callback' => 'absint',
         ) 
     );
@@ -190,7 +190,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
         new LegalBlow_Slider_Control( $wp_customize, 'legalblow_menu_spacing_from_top', 
         array(
             'label' => esc_html__( 'Margin from Top (px)','legalblow' ),
-            'description' => esc_html__( 'Default is 20','legalblow' ),
+            'description' => esc_html__( 'Default is 0','legalblow' ),
             'section' => 'legalblow_header_menu_settings',
             'input_attrs' => array(
                 'min' => 0, 
@@ -312,7 +312,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
         'legalblow_header_menu_last_button_bg_color',
         array(
             'type' => 'theme_mod',
-            'default'           => '#ed516c',
+            'default'           => '#c29852',
             'sanitize_callback' => 'sanitize_hex_color'
         )
     );
@@ -330,28 +330,6 @@ function legalblow_customizer_header_register( $wp_customize ) {
 	    )
     );
 
-    // button border color
-    $wp_customize->add_setting(
-        'legalblow_header_menu_last_button_border_color',
-        array(
-            'type' => 'theme_mod',
-            'default'           => '#ed516c',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-        	$wp_customize,
-        	'legalblow_header_menu_last_button_border_color',
-	        array(
-	        	'label'      => esc_html__( 'Border Color', 'legalblow' ),
-	        	'section'    => 'legalblow_header_menu_settings',
-	        	'settings'   => 'legalblow_header_menu_last_button_border_color',
-	        	'active_callback' => 'legalblow_header_menu_button_enable',
-	        )
-	    )
-    );
 
     // button text color
     $wp_customize->add_setting(
@@ -377,7 +355,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
     );
 
 
-    // Title label
+    // Title label for Mobile 
 	$wp_customize->add_setting( 
 		'legalblow_label_header_menu_last_button_color_mobile', 
 		array(
@@ -396,12 +374,12 @@ function legalblow_customizer_header_register( $wp_customize ) {
 		) 
 	));
 
-	// button bg color
+	// button bg color for Mobile 
     $wp_customize->add_setting(
         'legalblow_header_menu_last_button_bg_color_mobile',
         array(
             'type' => 'theme_mod',
-            'default'           => '#ed516c',
+            'default'           => '#c29852',
             'sanitize_callback' => 'sanitize_hex_color'
         )
     );
@@ -419,30 +397,8 @@ function legalblow_customizer_header_register( $wp_customize ) {
 	    )
     );
 
-    // button border color
-    $wp_customize->add_setting(
-        'legalblow_header_menu_last_button_border_color_mobile',
-        array(
-            'type' => 'theme_mod',
-            'default'           => '#ed516c',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
 
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-        	$wp_customize,
-        	'legalblow_header_menu_last_button_border_color_mobile',
-	        array(
-	        	'label'      => esc_html__( 'Border Color', 'legalblow' ),
-	        	'section'    => 'legalblow_header_menu_settings',
-	        	'settings'   => 'legalblow_header_menu_last_button_border_color_mobile',
-	        	'active_callback' => 'legalblow_header_menu_button_enable',
-	        )
-	    )
-    );
-
-    // button text color
+    // button text color for Mobile 
     $wp_customize->add_setting(
         'legalblow_header_menu_last_button_content_color_mobile',
         array(
@@ -571,7 +527,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
     $wp_customize->add_setting( 
         'legalblow_header_toggle_menu_btn_padding', 
         array(
-            'default' => 20,
+            'default' => 2,
             'sanitize_callback' => 'absint',
         ) 
     );
@@ -580,7 +536,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
         new LegalBlow_Slider_Control( $wp_customize, 'legalblow_header_toggle_menu_btn_padding', 
         array(
             'label' => esc_html__( 'Button Padding(px)','legalblow' ),
-            'description' => esc_html__( 'Default is 20','legalblow' ),
+            'description' => esc_html__( 'Default is 2','legalblow' ),
             'section' => 'legalblow_header_menu_settings',
             'input_attrs' => array(
                 'min' => 0, 
@@ -592,24 +548,24 @@ function legalblow_customizer_header_register( $wp_customize ) {
     ));
 
 
-    // Info label
-    $wp_customize->add_setting( 
-        'legalblow_header_toggle_menu_btn_info', 
-        array(
-            'sanitize_callback' => 'legalblow_sanitize_title',
-        ) 
-    );
+    // // Info label
+    // $wp_customize->add_setting( 
+    //     'legalblow_header_toggle_menu_btn_info', 
+    //     array(
+    //         'sanitize_callback' => 'legalblow_sanitize_title',
+    //     ) 
+    // );
 
-    $wp_customize->add_control( 
-        new LegalBlow_Info_Control( $wp_customize, 'legalblow_header_toggle_menu_btn_info', 
-        array(
-            'label'       => esc_html__( 'Note: This button settings only works if you have set the last menu as button', 'legalblow' ),
-            'section'     => 'legalblow_header_menu_settings',
-            'type'        => 'legalblow-info',
-            'settings'    => 'legalblow_header_toggle_menu_btn_info',
-            'active_callback' => 'legalblow_header_menu_button_enable',
-        ) 
-    ));
+    // $wp_customize->add_control( 
+    //     new LegalBlow_Info_Control( $wp_customize, 'legalblow_header_toggle_menu_btn_info', 
+    //     array(
+    //         // 'label'       => esc_html__( 'Note: This button settings only works if you have set the last menu as button', 'legalblow' ),
+    //         'section'     => 'legalblow_header_menu_settings',
+    //         'type'        => 'legalblow-info',
+    //         'settings'    => 'legalblow_header_toggle_menu_btn_info',
+    //         'active_callback' => 'legalblow_header_menu_button_enable',
+    //     ) 
+    // ));
 
 
 

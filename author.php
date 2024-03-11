@@ -1,11 +1,6 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The template for displaying archive pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -13,52 +8,42 @@
  */
 
 get_header();
-// legalblow_before_title();
-do_action('legalblow_get_page_title',true,false,false,false);
-// legalblow_after_title();
+legalblow_before_title();
+?>
+	<div class="page-title">
+        <?php legalblow_before_title_content(); ?>
+        <div class="container">
+        	<?php
+        		$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+        	?>
+           <h1 class="main-title">
+           		<span><?php esc_html_e('Author: ','legalblow') ?></span>
+           		<?php echo $curauth->nickname; ?>
+        	</h1>
+            <?php
+                if(get_theme_mod( 'legalblow_enable_page_breadcrumbs',true)) :
+                    do_action('legalblow_breadcrumbs_hook');
+                endif;
+            ?>
+        </div>
+        <?php legalblow_after_title_content(); ?>
+    </div>
+<?php
+legalblow_after_title();
 
 ?>
 
-<div id="primary" class="container content-area">
-	<div id="main" class="site-main" role="main">
-		<div class="content-inner">
+<div id="primary" class="<?php echo esc_attr(get_theme_mod('legalblow_header_menu_style','style1')); ?> content-area">
+	<main id="main" class="site-main legalblow-main" role="main">
+		<div class="container">
 			<div id="blog-section">
 		        <div class="row">
 		        	<?php
 		        		if ( is_active_sidebar('sidebar-1')) :
 		        			if('right'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
-		        				?>
-									<div id="post-wrapper" class="col-md-9">
+			        			?>
+			        				<div class="col-md-9">
 										<?php
-											if(have_posts() ) :							
-												while(have_posts() ) :
-													the_post();
-													/*
-													 * Include the Post-Format-specific template for the content.
-													 * If you want to override this in a child theme, then include a file
-													 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-													*/
-													get_template_part( 'template-parts/post/content', get_post_format());
-												endwhile;
-												?>
-									                <nav class="pagination">
-									                    <?php the_posts_pagination(); ?>
-									                </nav>
-												<?php	
-											endif;		
-										?>		
-						            </div>
-						            <div id="sidebar-wrapper" class="col-md-3">
-										<?php get_sidebar('sidebar-1'); ?>
-									</div>
-						    	<?php
-						    elseif('left'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
-    							?>
-									<div id="sidebar-wrapper" class="col-md-3">
-										<?php get_sidebar('sidebar-1'); ?>
-							        </div>
-						            <div id="post-wrapper" class="col-md-9">
-						            	<?php
 											if(have_posts() ) :
 												while(have_posts() ) :
 													the_post();
@@ -67,19 +52,48 @@ do_action('legalblow_get_page_title',true,false,false,false);
 													 * If you want to override this in a child theme, then include a file
 													 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 													 */
-													get_template_part( 'template-parts/post/content', get_post_format());
+													get_template_part( 'template-parts/post/content-archive', get_post_format());
 												endwhile;
 												?>
-								                	<nav class="pagination">
-								                		<?php the_posts_pagination(); ?>
-								                	</nav>
+						                			<nav class="pagination">
+						                    			<?php the_posts_pagination(); ?>
+						                			</nav>
 												<?php	
-											endif;		
+											endif;
 										?>
 						            </div>
-								<?php
-							else :
-								?>
+						            <div class="col-md-3">
+						                <?php get_sidebar('sidebar-1'); ?>
+						            </div>
+			        			<?php
+		        			elseif('left'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) :
+			        			?>
+			        				<div class="col-md-3">
+						                <?php get_sidebar('sidebar-1'); ?>
+						            </div>
+						            <div class="col-md-9">
+										<?php
+											if(have_posts() ) :
+												while(have_posts() ) :
+													the_post();
+													/*
+													 * Include the Post-Format-specific template for the content.
+													 * If you want to override this in a child theme, then include a file
+													 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+													 */
+													get_template_part( 'template-parts/post/content-archive', get_post_format());
+												endwhile;
+												?>
+						                			<nav class="pagination">
+						                    			<?php the_posts_pagination(); ?>
+						                			</nav>
+												<?php	
+											endif;
+										?>
+						            </div>
+						    	<?php
+			        		else :
+			        			?>
 									<div class="col-md-12">
 										<?php
 											if(have_posts() ) :
@@ -90,7 +104,7 @@ do_action('legalblow_get_page_title',true,false,false,false);
 													 * If you want to override this in a child theme, then include a file
 													 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 													 */
-													get_template_part( 'template-parts/post/content', get_post_format());
+													get_template_part( 'template-parts/post/content-archive', get_post_format());
 												endwhile;
 												?>
 						                			<nav class="pagination">
@@ -101,9 +115,9 @@ do_action('legalblow_get_page_title',true,false,false,false);
 										?>
 						            </div>
 								<?php
-							endif;
-						else:
-							?>
+			        		endif;
+			        	else:
+			        		?>
 								<div class="col-md-12">
 									<?php
 										if(have_posts() ) :
@@ -114,7 +128,7 @@ do_action('legalblow_get_page_title',true,false,false,false);
 												 * If you want to override this in a child theme, then include a file
 												 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 												 */
-												get_template_part( 'template-parts/post/content', get_post_format());
+												get_template_part( 'template-parts/post/content-archive', get_post_format());
 											endwhile;
 											?>
 					                			<nav class="pagination">
@@ -125,12 +139,12 @@ do_action('legalblow_get_page_title',true,false,false,false);
 									?>
 					            </div>
 							<?php
-						endif;
-					?>          
+			        	endif;
+		        	?>			            
 		        </div>
 			</div>
 		</div>
-	</div>
+	</main>
 </div>
 
 <?php

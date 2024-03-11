@@ -781,7 +781,7 @@ a:focus{
 img {
   max-width: 100%;
   height: auto;
-  aspect-ratio: 2;
+  /* aspect-ratio: 2; */
 
 }
 
@@ -913,6 +913,8 @@ address {
 p {
   margin: 0 0 1.5em;
   padding: 0;
+  width: 90%;
+
 }
 
 dd {
@@ -1134,7 +1136,7 @@ Navigation
   display: inline-block;
   margin-top: -16px;
   width: 100%;
-text-align: center;
+
 }
 
 .top-menu .navigation > li {
@@ -1526,6 +1528,8 @@ Blog
   font-weight: 400;
   padding: 0;
   font-size: 20px;
+  margin: 0px 0 0 0;
+
 }
 
 .blog .content-inner {
@@ -1554,7 +1558,7 @@ Blog
 }
 
 .blog .meta {
-  margin-bottom: 20px;
+  margin: 20px 0 20px 0;
 }
 
 .blog time.updated,
@@ -1702,7 +1706,7 @@ header .header-inner {
 
 .top-menu .navigation > li:last-child {
   float: right;
-  margin-top: 10px;
+  margin-top: auto;
 }
 
 .top-menu .navigation > li:last-child a {
@@ -2512,7 +2516,7 @@ Single post page - Updated on (date)
 }
 
 .image {
-  aspect-ratio: 1.6;
+  margin-bottom: 20px;
 }
 
 .author-inner , .posted-on .date-meta{
@@ -2525,16 +2529,6 @@ Categories on Single post page
 */  
 .post-categories {
   margin-top:30px;
-}
-
-
-/**
-====================================================================
-Line after Image on Single post page
-====================================================================
-*/  
-.wp-block-separator {
-  margin-top: -140px;
 }
 
 
@@ -2561,12 +2555,13 @@ Post desciption
 ====================================================================
 */  
 .content {
-  margin-top: -50px;
-}
+    margin: 0 0 0 0;
+    min-width: fit-content;}
 
 .blog .image img{
 height: 270px;
 }
+
 
 
 /**
@@ -2578,22 +2573,6 @@ Left search sidebar
   margin-top: 46px;
 
 }
-
-
-
-/**
-====================================================================
-Image fadein and fadeout
-====================================================================
-*/  
-/* .blog .image:hover img{
-transform: scale(1.5);
-}
-
-.blog .image{
-  overflow:hidden;
-  transition: transform 3s;
-} */
 
 
 /**
@@ -2766,4 +2745,28 @@ Topbar- Contact and Email
    margin-left: -180px;
 
 }
-} */ */
+} */ 
+
+.single .blog-post .title {
+  width: auto;
+ 
+}
+
+.single .image img{
+width: 90%;
+height: 400px;
+/* margin: 0 0 -160px 0; */
+
+}
+
+.blog .article .blog-post{
+  width: 100%;
+}
+
+.entry-content {
+  margin: 20px 0 10px;
+}
+
+.single article .entry-content {
+  /* margin: 20px 0 0 0 !important; */
+}
