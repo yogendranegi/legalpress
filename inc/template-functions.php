@@ -25,10 +25,10 @@ function legalblow_footer_copyrights() {
     ?>
         <div class="row">
             <div class="copyright">
-                <p?>
+                <p>
                     <?php 
 
-                        if("" != esc_html(get_theme_mod( 'legalblow_foote_copyright_text'))) {
+                        if("" != esc_html(get_theme_mod( 'legalblow_footer_copyright_text'))) {
                             echo esc_html(get_theme_mod( 'legalblow_footer_copyright_text'));
                             if(get_theme_mod('legalblow_en_footer_credits',true)) {
                                 ?><span><?php esc_html_e(' | Theme by ','legalblow') ?><a href="<?php echo esc_url(LEGALBLOW_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','legalblow') ?></a></span>
@@ -41,8 +41,9 @@ function legalblow_footer_copyrights() {
                                     _x( 'Y', 'copyright date format', 'legalblow')
                                 );
                                 ?>
-                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-                                    <span><?php esc_html_e(' | Theme by ','legalblow') ?><a href="<?php echoesc_url(LEGALBLOW_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','legalblow') ?></a></span>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+                                <span><?php esc_html_e(' | Theme by ','legalblow') ?><a href="<?php echo esc_url(LEGALBLOW_THEME_AUTH); ?>" target="_blank"><?php esc_html_e('Spiracle Themes','legalblow') ?></a></span>
+
                                 <?php 
                             }
                         ?>

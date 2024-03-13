@@ -205,7 +205,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
     $wp_customize->add_setting( 
         'legalblow_menu_spacing_from_bottom', 
         array(
-            'default' => 0,
+            'default' => 30,
             'sanitize_callback' => 'absint',
         ) 
     );

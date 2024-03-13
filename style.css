@@ -1132,11 +1132,9 @@ Navigation
 
 .top-menu .navigation {
   position: relative;
-  margin: 0;
   display: inline-block;
-  margin-top: -16px;
-  width: 100%;
-
+  /* width: 100%; */
+  float:right;
 }
 
 .top-menu .navigation > li {
@@ -1541,7 +1539,7 @@ Blog
 }
 
 .blog .read-more {
-  margin-top: 35px;
+  margin-top: 0px;
 }
 
 .blog .post-day-icon img,
