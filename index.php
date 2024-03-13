@@ -133,7 +133,6 @@ do_action('legalblow_get_page_title',true,false,false,false);
 	</div>
 </div>
 
-
 <?php
 
 get_footer();

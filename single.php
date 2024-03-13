@@ -21,9 +21,11 @@ $cb_values= explode(",",esc_html(get_theme_mod( 'legalblow_single_post_meta_pill
 			<div id="blog-section">
 		        <div class="row">
 		        	<?php
+					if('right'===esc_html(get_theme_mod('legalblow_blog_single_sidebar_layout','right'))) :
+						?>
+						<?php	
 		        		if ( is_active_sidebar('sidebar-1')) :
-		        			if('right'===esc_html(get_theme_mod('legalblow_blog_single_sidebar_layout','right'))) :
-		        				?>
+							?>
         							<div id="post-wrapper" class="col-md-9">
 										<?php
 											while ( have_posts() ) : the_post();

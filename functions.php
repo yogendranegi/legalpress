@@ -215,17 +215,10 @@ function legalblow_widgets_init() {
         ) );
     endfor;
 
-    if(get_theme_mod( 'legalblow_enable_header_topbar',true)):
+    if(get_theme_mod( 'legalblow_enable_header_topbar',false)):
     	register_sidebar( array(
-			'name'          => esc_html__( 'Top Bar Left Column', 'legalblow' ),
-			'id'            => 'topbar-left',
-			'description'   => esc_html__( 'Add widgets here.', 'legalblow' ),
-			'before_widget' => '<div id="%1$s" class="section %2$s">',
-            'after_widget'  => '</div>',
-		) );
-		register_sidebar( array(
-			'name'          => esc_html__( 'Top Bar Right Column', 'legalblow' ),
-			'id'            => 'topbar-right',
+			'name'          => esc_html__( 'TopBar', 'legalblow' ),
+			'id'            => 'topbar',
 			'description'   => esc_html__( 'Add widgets here.', 'legalblow' ),
 			'before_widget' => '<div id="%1$s" class="section %2$s">',
             'after_widget'  => '</div>',
@@ -279,6 +272,7 @@ add_filter('excerpt_length', 'legalblow_my_excerpt_length');
  */
 function legalblow_scripts() {
 	wp_register_style( 'legalblow-main', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
 
 	wp_enqueue_style( 'legalblow-main' );
 	if(get_theme_mod( 'legalblow_enable_poppings_font',false)) :
@@ -302,6 +296,8 @@ function legalblow_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) :
 		wp_enqueue_script( 'comment-reply' );
 	endif;
+
+	
 }
 add_action( 'wp_enqueue_scripts', 'legalblow_scripts' );
 
@@ -331,6 +327,21 @@ function legalblow_search_form( $form ) {
     return $form;
 }
 add_filter( 'get_search_form', 'legalblow_search_form', 100 );
+
+
+/**
+ * Display Dynamic CSS.
+ */
+function legalblow_dynamic_css_wrap() {
+	require_once( get_parent_theme_file_path( '/css/dynamic.css.php' ) );  
+	?>
+  		<style type="text/css" id="legalblow-dynamic-style">
+    		<?php echo legalblow_dynamic_css_stylesheet(); ?>
+  		</style>
+	<?php 
+}
+add_action( 'wp_head', 'legalblow_dynamic_css_wrap' );
+
 
 /*
 
@@ -375,3 +386,5 @@ add_filter( 'get_search_form', 'legalblow_search_form', 100 );
 require get_parent_theme_file_path() . '/inc/template-functions.php'; 
 
 require get_parent_theme_file_path() . '/inc/template-tags.php'; 
+
+require get_parent_theme_file_path() . '/inc/customizer/customizer.php'; 
