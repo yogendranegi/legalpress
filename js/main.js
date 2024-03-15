@@ -93,9 +93,6 @@
             }
         });
 
-        /*-- tooltip --*/
-        $('[data-toggle="tooltip"]').tooltip();
-
         /*-- Button Up --*/
         var btnUp = $('<div/>', { 'class': 'btntoTop' });
         btnUp.appendTo('body');
@@ -114,8 +111,8 @@
         });
         
         /*-- Sticky Sidebar --*/
-        $('#sidebar-wrapper, #post-wrapper').theiaStickySidebar({minWidth: 1024});
-        $('#content-main, #content-left, #content-right').theiaStickySidebar({minWidth: 1024});
+        //$('#sidebar-wrapper, #post-wrapper').theiaStickySidebar({minWidth: 1024});
+        //$('#content-main, #content-left, #content-right').theiaStickySidebar({minWidth: 1024});
 
         /*-- Remove hd bar for larger screens --*/
         if ($(window).width() > 991) {

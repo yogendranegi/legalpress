@@ -215,16 +215,6 @@ function legalblow_widgets_init() {
         ) );
     endfor;
 
-    if(get_theme_mod( 'legalblow_enable_header_topbar',false)):
-    	register_sidebar( array(
-			'name'          => esc_html__( 'TopBar', 'legalblow' ),
-			'id'            => 'topbar',
-			'description'   => esc_html__( 'Add widgets here.', 'legalblow' ),
-			'before_widget' => '<div id="%1$s" class="section %2$s">',
-            'after_widget'  => '</div>',
-		) );
-    endif;
-
 }
 add_action( 'widgets_init', 'legalblow_widgets_init' );
 
@@ -234,7 +224,7 @@ add_action( 'widgets_init', 'legalblow_widgets_init' );
 */
 if ( ! function_exists( 'legalblow_admin_scripts' ) ) :
 function legalblow_admin_scripts($hook) {
-  	wp_enqueue_style( 'legalblow-info-css', get_template_directory_uri() . '/css/legalblow-theme-info' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.css', false );
+  	wp_enqueue_style( 'legalblow-info-css', get_template_directory_uri() . '/css/legalblow-theme-info.css', false );
 }
 endif;
 add_action( 'admin_enqueue_scripts', 'legalblow_admin_scripts' );
@@ -271,26 +261,28 @@ add_filter('excerpt_length', 'legalblow_my_excerpt_length');
  * Enqueue Styles and Scripts
  */
 function legalblow_scripts() {
-	wp_register_style( 'legalblow-main', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+
+	wp_enqueue_style( 'legalblow-main', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/fontawesome.css', array(), '5.10.1');
 
-	wp_enqueue_style( 'legalblow-main' );
 	if(get_theme_mod( 'legalblow_enable_poppings_font',false)) :
 		wp_enqueue_style( 'poppins-google-font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap', array(), '1.0'); 
 	endif;
+
+
+    // Main js
+	wp_enqueue_script( 'legalblow-script', get_template_directory_uri() . '/js/main.js',array('jquery'), wp_get_theme()->get('Version'), true );
+
+
 	// Sticky Header js
     if ( get_theme_mod( 'legalblow_enable_stickyheader', false ) ) :
-        wp_enqueue_script( 'legalblow-sticky', get_template_directory_uri() . '/js/sticky' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js', array(), wp_get_theme()->get('Version'), true );
+        wp_enqueue_script( 'legalblow-sticky', get_template_directory_uri() . '/js/sticky.js', array(), wp_get_theme()->get('Version'), true );
     endif;
-    // Main js
-	wp_enqueue_script( 'legalblow-script', get_template_directory_uri() . '/js/main.js' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js',array(), wp_get_theme()->get('Version'), true );
 
-	//bootstrap
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array());
 
 	// Preloader js
 	if(get_theme_mod( 'legalblow_enable_preloader',false)) :
-		wp_enqueue_script( 'legalblow-preloader-script', get_template_directory_uri() . '/js/preloader' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js',array(), 	wp_get_theme()->get('Version'), true );
+		wp_enqueue_script( 'legalblow-preloader-script', get_template_directory_uri() . '/js/preloader.js',array(), 	wp_get_theme()->get('Version'), true );
 	endif;
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) :

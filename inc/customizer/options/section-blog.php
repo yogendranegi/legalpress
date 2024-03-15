@@ -372,6 +372,50 @@ function legalblow_customizer_blog_register( $wp_customize ) {
         )
     );
 
+    //single post width
+    $wp_customize->add_setting( 
+        'legalblow_single_post_width', 
+        array(
+            'default' => 65,
+            'sanitize_callback' => 'absint',
+        ) 
+    );
+
+    $wp_customize->add_control( 
+        new LegalBlow_Slider_Control( $wp_customize, 'legalblow_single_post_width', 
+        array(
+            'label' => esc_html__( 'Post Width Spacing(%)','legalblow' ),
+            'description' => esc_html__( 'Default is 65','legalblow' ),
+            'section' => 'legalblow_single_post_settings',
+            'input_attrs' => array(
+                'min' => 0, 
+                'max' => 100,
+                'step' => 1,
+            ),
+        )
+    ));
+
+
+    // Add an option to enable the post to center
+	$wp_customize->add_setting( 
+		'legalblow_enable_single_post_align_center', 
+		array(
+		    'default'           => false,
+		    'type'              => 'theme_mod',
+		    'sanitize_callback' => 'legalblow_sanitize_checkbox',
+		) 
+	);
+
+	$wp_customize->add_control( 
+		new LegalBlow_Toggle_Control( $wp_customize, 'legalblow_enable_single_post_align_center', 
+		array(
+		    'label'       => esc_html__( 'Align center the post text', 'legalblow' ),
+		    'section'     => 'legalblow_single_post_settings',
+		    'type'        => 'legalblow-toggle',
+		    'settings'    => 'legalblow_enable_single_post_align_center',
+		) 
+	));
+
 }
 endif;
 

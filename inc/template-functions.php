@@ -64,7 +64,7 @@ function legalblow_excerpt_length($length) {
     if ( is_admin() ) {
         return $length;
     }
-    return absint(get_theme_mod('legalblow_posts_excerpt_length',70));
+    return absint(get_theme_mod('legalblow_posts_excerpt_length',20));
 }
 endif;
 
@@ -110,10 +110,10 @@ endif;
 
 
 /**
- * Adding blog sidebar classes to body
+ * Adding single sidebar classes to body
  */
-if ( ! function_exists( 'legalblow_add_blog_sidebar_classes_to_body' ) )  :
-function legalblow_add_blog_sidebar_classes_to_body($classes = '') {
+if ( ! function_exists( 'legalblow_add_blog_single_sidebar_classes_to_body' ) )  :
+function legalblow_add_blog_single_sidebar_classes_to_body($classes = '') {
     if('right'===esc_html(get_theme_mod('legalblow_blog_single_sidebar_layout','no'))) {
         $classes[] = 'single-right-sidebar';
     }
@@ -122,6 +122,26 @@ function legalblow_add_blog_sidebar_classes_to_body($classes = '') {
     }
     else{
         $classes[] = 'single-no-sidebar';
+    }
+    return $classes;
+}
+endif;
+add_filter('body_class', 'legalblow_add_blog_single_sidebar_classes_to_body');
+
+
+/**
+ * Adding blog sidebar classes to body
+ */
+if ( ! function_exists( 'legalblow_add_blog_sidebar_classes_to_body' ) )  :
+function legalblow_add_blog_sidebar_classes_to_body($classes = '') {
+    if('right'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))) {
+        $classes[] = 'blog-right-sidebar';
+    }
+    else if('left'===esc_html(get_theme_mod('legalblow_blog_sidebar_layout','right'))){
+        $classes[] = 'blog-left-sidebar';
+    }
+    else{
+        $classes[] = 'blog-no-sidebar';
     }
     return $classes;
 }

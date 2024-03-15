@@ -9,35 +9,65 @@
 
 if ( ! function_exists( 'legalblow_posted_on' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for the current post-date/time.
  */
 function legalblow_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>&nbsp;<time class="updated" datetime="%3$s">%4$s</time>';
+	$posted_on_text = '';
+	$legalblow_last_updated_post_date = get_theme_mod( 'legalblow_last_updated_post_date', false );
+    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		if( $legalblow_last_updated_post_date ){
+            $time_string = '<time class="entry-date published updated" datetime="%3$s" itemprop="dateModified">%4$s</time></time><time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time>';		  
+		}else{
+            $time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';  
+		}        
+	}else{
+	   $time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';   
 	}
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_attr( get_the_date() ),
+		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_attr( get_the_modified_date() )
+		esc_html( get_the_modified_date() )
 	);
+    $posted_on = sprintf( '%1$s %2$s',$posted_on_text, '<a href="' . esc_url(get_day_link( absint(get_the_date('Y')), absint(get_the_date('m')), absint(get_the_date('d')))) . '" rel="bookmark">' . $time_string . '</a>' );
 
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'legalblow' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'legalblow' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_attr( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	
+	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
+
+
+if ( ! function_exists( 'legalblow_category' ) ) :
+/**
+ * Prints categories
+ */
+function legalblow_category(){
+	if ( 'post' === get_post_type() ) :
+		$categories_list = get_the_category_list( ' ' );
+		if ( $categories_list ) :
+     		echo '<span class="category" itemprop="about">' . $categories_list . '</span>';
+     	endif;
+	endif;
+}
+endif;
+
+
+if ( ! function_exists( 'legalblow_tag' ) ) :
+/**
+ * Prints tags
+ */
+function legalblow_tag(){
+	if ( 'post' === get_post_type() ) {
+		$tags_list = get_the_tag_list( '', ' ' );
+		if ( $tags_list ) :
+			printf( '<span class="tags" itemprop="about">' . esc_html__( '%1$s %2$s %3$s', 'legalblow' ) . '</span>', '', '', $tags_list );
+		endif;
+	}
+}
+endif;
+
 
 if ( ! function_exists( 'legalblow_entry_footer' ) ) :
 /**
@@ -45,26 +75,26 @@ if ( ! function_exists( 'legalblow_entry_footer' ) ) :
  */
 function legalblow_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
+	if ( 'post' === get_post_type() ) :
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'legalblow' ) );
-		if ( $categories_list && legalblow_categorized_blog() ) {
+		if ( $categories_list && legalblow_categorized_blog() ) :
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'legalblow' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
+		endif;
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'legalblow' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'legalblow' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
+		if ( $tags_list ) :
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'legalblow' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		endif;
+	endif;
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 		echo '<span class="comments-link">';
 		/* translators: %s: post title */
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'legalblow' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
-	}
+	endif;
 
 	edit_post_link(
 		sprintf(
@@ -83,10 +113,8 @@ endif;
  *
  * @return bool
  */
-
- if ( ! function_exists( 'legalblow_categorized_blog' ) ) :
 function legalblow_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'legalblow_categories' ) ) ) {
+	if ( false === ( $all_the_cool_cats = get_transient( 'legalblow_categories' ) ) ) :
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -99,30 +127,27 @@ function legalblow_categorized_blog() {
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
 		set_transient( 'legalblow_categories', $all_the_cool_cats );
-	}
+	endif;
 
-	if ( $all_the_cool_cats > 1 ) {
+	if ( $all_the_cool_cats > 1 ) :
 		// This blog has more than 1 category so legalblow_categorized_blog should return true.
 		return true;
-	} else {
+	else :
 		// This blog has only 1 category so legalblow_categorized_blog should return false.
 		return false;
-	}
+	endif;
 }
-endif;
 
 /**
  * Flush out the transients used in legalblow_categorized_blog.
  */
-if ( ! function_exists( 'legalblow_category_transient_flusher' ) ) :
 function legalblow_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) :
 		return;
-	}
+	endif;
 	// Like, beat it. Dig?
 	delete_transient( 'legalblow_categories' );
 }
-endif;
 add_action( 'edit_category', 'legalblow_category_transient_flusher' );
 add_action( 'save_post',     'legalblow_category_transient_flusher' );
 
@@ -136,8 +161,8 @@ if ( ! function_exists( 'legalblow_the_custom_logo' ) ) :
  *
  */
 function legalblow_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
+	if ( function_exists( 'the_custom_logo' ) ) :
 		the_custom_logo();
-	}
+	endif;
 }
 endif;

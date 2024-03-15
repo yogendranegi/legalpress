@@ -7,6 +7,9 @@
 
 function legalblow_dynamic_css_stylesheet() {
 
+    $logo_width=get_theme_mod('legalblow_logo_width_settings',200);
+    $logo_spacing=get_theme_mod('legalblow_logo_spacing_settings',12);
+
     $link_color= sanitize_hex_color(get_theme_mod( 'legalblow_link_color','#555' ));
     $link_hover_color= sanitize_hex_color(get_theme_mod( 'legalblow_link_hover_color','#000' ));
     $heading_color= sanitize_hex_color(get_theme_mod( 'legalblow_headings_title_color','#000' ));
@@ -34,7 +37,7 @@ function legalblow_dynamic_css_stylesheet() {
 
     $spacing= get_theme_mod('legalblow_footer_copyrights_spacing',30);
 
-    $logo_width=get_theme_mod('legalblow_logo_width_settings',200);
+    
 
     $footer_copyright_text=get_theme_mod('legalblow_footer_copyrights_spacing',30);
 
@@ -53,60 +56,11 @@ function legalblow_dynamic_css_stylesheet() {
         transition: all 0.3s ease-in-out;
     }
 
-    .top-menu-wrapper {
-        padding: 0px ' . $padding . 'px;
-        margin-top: ' . $margin_top . 'px ;
-        margin-bottom: ' . $margin_bottom . 'px ;
-        color: ' . $menu_color . 'px;
-    } 
-    
-    .copyright span{ 
-        padding: ' . $footer_copyright_text . 'px;
-    }
-    .copyright span a{
-        padding: ' . $footer_copyright_text . 'px;
-        color: ' . $footer_links_color . ';
-    }
-
-    .copyright{ 
-        padding: ' . $footer_content_spacing . 'px;
-    }
-
-
-    .copyright {
-        background-color:' . $footer_bg_color . ';
-        color:' . $footer_content_color . ';
-    }
-
-    .copyright span a{
-        
-    }
-
-    .footer-copyrights-wrapper {
-        background-color:' . $footer_bg_color . ';
-        color:' . $footer_content_color . ';
-    }
-
-
-    .logo {
+    .logo a.custom-logo-link {
         width: ' . $logo_width . 'px;
+        margin: ' . $logo_spacing .'px 0;
+        display: inline-block;
     }
-
-
-    .top-menu .navigation > li:last-child a {
-        margin-top: ' . $vertical_spacing .'px;
-        margin-top: ' . $button_height .'px;
-        margin-top: ' . $button_padding .'px;
-
-        background-color:' . $bg_color . ';
-        color:' . $text_color . ';
-        
-
-    }
-    . {
-        color: ' . $primary_color . ';
-    }
-
 
     a:hover,a:focus{
         color: ' . $link_hover_color . ';
@@ -180,15 +134,15 @@ function legalblow_dynamic_css_stylesheet() {
         transition: all 0.3s ease-in-out;
     }
 
-    .blog.single-no-sidebar article{
-        width: 100%;
-    }
-
     .single article .title, 
     .single article .content,
     .single article #comments {
         width: ' . $single_post_width . '%;
-        margin: 0 auto;
+        min-width: auto;
+    }
+
+    .single article p {
+        width: 100%;
     }
 
     .container {
@@ -198,19 +152,6 @@ function legalblow_dynamic_css_stylesheet() {
 
 ';
 
-
-if('square'==esc_html(get_theme_mod('legalblow_choose_style_menu_last_button','square'))) :
-    $css .='
-        .top-menu .navigation > li:last-child a{
-            border-radius: 0;
-        }
-    ';
-
-    else :
-    $css.='
-    .top-menu .navigation > li:last-child a{
-        border-radius: 20px;    ';
-    endif;
 
 
 if(false===get_theme_mod( 'legalblow_display_site_title_tagline',true)){
@@ -549,11 +490,71 @@ endif;
 
 
 //check if center copyrights text
-if(true===get_theme_mod( 'colon_enable_center_copyrights_text',true)) :
+if(true===get_theme_mod( 'legalblow_enable_center_copyrights_text',true)) :
     $css .='
          footer .copyrights {
             text-align: center;
          }
+    ';
+endif;
+
+
+//check if single page post text is align to center
+if(true===get_theme_mod( 'legalblow_enable_single_post_align_center',false)) :
+    $css .='
+        .single article .title, 
+        .single article .content,
+        .single article #comments {
+            margin: 0 auto;
+        }
+
+        .single .blog-post .image {
+            text-align: center;
+        }
+    ';
+endif;
+
+/* Preloader */
+if(true === get_theme_mod( 'legalblow_enable_preloader',false )) :
+    $css .='
+
+        .loader-wrapper {
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            position: fixed !important;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100000;
+        }
+
+        #pre-loader {
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 45%;
+            left: 47%;
+        }
+
+        .loader-pulse {
+            width: 50px;
+            height: 50px;
+            background-color: #555;
+            border-radius: 100%;
+            animation: loader-pulse 1.2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955); 
+        }
+
+        @keyframes loader-pulse {
+            0% {
+                transform: scale(0); 
+            } 100% {
+                transform: scale(1);
+                opacity: 0; 
+            }
+        }
+
     ';
 endif;
 

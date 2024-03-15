@@ -18,7 +18,7 @@ function legalblow_customizer_header_register( $wp_customize ) {
         )
     );
 
-	// Section Top bar ===================================================
+    // Topbar Menu ===================================================
     $wp_customize->add_section(
         'legalblow_header_topbar_settings',
         array (
@@ -29,43 +29,126 @@ function legalblow_customizer_header_register( $wp_customize ) {
         )
     ); 
 
-    // Title label
+
+	// Title label
 	$wp_customize->add_setting( 
-		'legalblow_label_header_topbar_show', 
+		'legalblow_label_header_topbar_callus', 
 		array(
 		    'sanitize_callback' => 'legalblow_sanitize_title',
 		) 
 	);
 
 	$wp_customize->add_control( 
-		new LegalBlow_Title_Info_Control( $wp_customize, 'legalblow_label_header_topbar_show', 
+		new LegalBlow_Title_Info_Control( $wp_customize, 'legalblow_label_header_topbar_callus', 
 		array(
-		    'label'       => esc_html__( 'Top Bar', 'legalblow' ),
+		    'label'       => esc_html__( 'Call Us Settings', 'legalblow' ),
 		    'section'     => 'legalblow_header_topbar_settings',
 		    'type'        => 'legalblow-title',
-		    'settings'    => 'legalblow_label_header_topbar_show',
+		    'settings'    => 'legalblow_label_header_topbar_callus',
 		) 
 	));
 
-	// Add an option to enable the top bar
+	//call us label
+
+	$wp_customize->add_setting(
+        'legalblow_header_topbar_call_us_label',
+        array(            
+            'default'           => esc_html__('Call Us:','legalblow'),
+            'sanitize_callback' => 'legalblow_sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'legalblow_header_topbar_call_us_label',
+        array(
+            'settings'      => 'legalblow_header_topbar_call_us_label',
+            'section'       => 'legalblow_header_topbar_settings',
+            'type'          => 'textbox',
+            'label'         => esc_html__( 'Call Us Label:', 'legalblow' ),
+        )
+    );
+
+
+    //call us text
+
+	$wp_customize->add_setting(
+        'legalblow_header_topbar_call_us_text',
+        array(            
+            'default'           => esc_html__('123-456-7890','legalblow'),
+            'sanitize_callback' => 'legalblow_sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'legalblow_header_topbar_call_us_text',
+        array(
+            'settings'      => 'legalblow_header_topbar_call_us_text',
+            'section'       => 'legalblow_header_topbar_settings',
+            'type'          => 'textbox',
+            'label'         => esc_html__( 'Call Us Text:', 'legalblow' ),
+        )
+    );
+
+
+    // Title label
 	$wp_customize->add_setting( 
-		'legalblow_enable_header_topbar', 
+		'legalblow_label_header_topbar_email', 
 		array(
-		    'default'           => false,
-		    'type'              => 'theme_mod',
-		    'sanitize_callback' => 'legalblow_sanitize_checkbox',
+		    'sanitize_callback' => 'legalblow_sanitize_title',
 		) 
 	);
 
 	$wp_customize->add_control( 
-		new LegalBlow_Toggle_Control( $wp_customize, 'legalblow_enable_header_topbar', 
+		new LegalBlow_Title_Info_Control( $wp_customize, 'legalblow_label_header_topbar_email', 
 		array(
-		    'label'       => esc_html__( 'Show Topbar', 'legalblow' ),
+		    'label'       => esc_html__( 'Email Settings', 'legalblow' ),
 		    'section'     => 'legalblow_header_topbar_settings',
-		    'type'        => 'legalblow-toggle',
-		    'settings'    => 'legalblow_enable_header_topbar',
+		    'type'        => 'legalblow-title',
+		    'settings'    => 'legalblow_label_header_topbar_email',
 		) 
 	));
+
+	//email us label
+
+	$wp_customize->add_setting(
+        'legalblow_header_topbar_email_label',
+        array(            
+            'default'           => esc_html__('Email:','legalblow'),
+            'sanitize_callback' => 'legalblow_sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'legalblow_header_topbar_email_label',
+        array(
+            'settings'      => 'legalblow_header_topbar_email_label',
+            'section'       => 'legalblow_header_topbar_settings',
+            'type'          => 'textbox',
+            'label'         => esc_html__( 'Email Label:', 'legalblow' ),
+        )
+    );
+
+
+    //email text
+
+	$wp_customize->add_setting(
+        'legalblow_header_topbar_email_text',
+        array(            
+            'default'           => esc_html__('info@example.com','legalblow'),
+            'sanitize_callback' => 'legalblow_sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'legalblow_header_topbar_email_text',
+        array(
+            'settings'      => 'legalblow_header_topbar_email_text',
+            'section'       => 'legalblow_header_topbar_settings',
+            'type'          => 'textbox',
+            'label'         => esc_html__( 'Email Text:', 'legalblow' ),
+        )
+    );
+
 
 
 	// Section Menu ===================================================
