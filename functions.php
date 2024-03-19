@@ -16,7 +16,6 @@ define('LEGALBLOW_REQUIRED_PHP_VERSION', '5.6' );
 define('LEGALBLOW_DIR_PATH', get_template_directory());
 define('LEGALBLOW_THEME_AUTH','https://www.spiraclethemes.com/');
 define('LEGALBLOW_DIR_URI', get_template_directory_uri());
-define('LEGALBLOW_MINIFY', get_theme_mod('legalblow_enable_minify_styles_scripts',true));
 
 //Register Required plugin
 require_once(get_template_directory() .'/inc/class-tgm-plugin-activation.php');
@@ -269,16 +268,13 @@ function legalblow_scripts() {
 		wp_enqueue_style( 'poppins-google-font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap', array(), '1.0'); 
 	endif;
 
-
     // Main js
 	wp_enqueue_script( 'legalblow-script', get_template_directory_uri() . '/js/main.js',array('jquery'), wp_get_theme()->get('Version'), true );
-
-
+	
 	// Sticky Header js
     if ( get_theme_mod( 'legalblow_enable_stickyheader', false ) ) :
         wp_enqueue_script( 'legalblow-sticky', get_template_directory_uri() . '/js/sticky.js', array(), wp_get_theme()->get('Version'), true );
     endif;
-
 
 	// Preloader js
 	if(get_theme_mod( 'legalblow_enable_preloader',false)) :
@@ -288,7 +284,6 @@ function legalblow_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) :
 		wp_enqueue_script( 'comment-reply' );
 	endif;
-
 	
 }
 add_action( 'wp_enqueue_scripts', 'legalblow_scripts' );
@@ -335,48 +330,8 @@ function legalblow_dynamic_css_wrap() {
 add_action( 'wp_head', 'legalblow_dynamic_css_wrap' );
 
 
-/*
 
-
-
-// /** 
-// *  Plugins Required
-// */
-// function legalblow_register_required_plugins() {
-//     $plugins = array(  
-//       	array(
-//           'name'               => 'Spiraclethemes Site Library',
-//           'slug'               => 'spiraclethemes-site-library',
-//           'source'             => '',
-//           'required'           => false,          
-//           'force_activation'   => false,
-//       	),    
-//     );
-
-//     $config = array(
-//             'id'           => 'legalblow',
-//             'default_path' => '',
-//             'menu'         => 'tgmpa-install-plugins',
-//             'has_notices'  => true,
-//             'dismissable'  => true,
-//             'dismiss_msg'  => '',
-//             'is_automatic' => false,
-//             'message'      => '',
-//             'strings'      => array()
-//     );
-
-//     tgmpa( $plugins, $config );
-
-// }
-// add_action( 'tgmpa_register', 'legalblow_register_required_plugins' );
-
-// /**
-//  * Load core files
-//  */
-// require get_template_directory() . '/inc/load-core-files.php';
-
-require get_parent_theme_file_path() . '/inc/template-functions.php'; 
-
-require get_parent_theme_file_path() . '/inc/template-tags.php'; 
-
-require get_parent_theme_file_path() . '/inc/customizer/customizer.php'; 
+/**
+ * Load Files
+ */
+require get_parent_theme_file_path() . '/inc/load-core-files.php'; 

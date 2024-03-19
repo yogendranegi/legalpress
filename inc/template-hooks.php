@@ -12,7 +12,7 @@
   */
 if ( ! function_exists( 'legalblow_before_title' ) ) :
 function legalblow_before_title() {
-    do_action('legalpres_before_title');
+    do_action('legalblow_before_title');
 }
 endif;
 
@@ -20,8 +20,8 @@ endif;
  * After title meta hook
  */
 if ( ! function_exists( 'legalblow_after_title' ) ) :
-function legalblow_before_title() {
-    do_action('legalblow_before_title');
+function legalblow_after_title() {
+    do_action('legalblow_after_title');
 }
 endif;
 

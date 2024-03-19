@@ -36,7 +36,7 @@ class LegalBlow_Text_Radio_Control extends WP_Customize_Control {
 	 * @return void
 	 */
 	public function enqueue() {
-        wp_enqueue_style( 'legalblow-tr-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/text-radio/text-radio' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.css', array(), '1.0', 'all' ));
+        wp_enqueue_style( 'legalblow-tr-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/text-radio/text-radio.css', array(), '1.0', 'all' ));
 	}
 	
 	/**

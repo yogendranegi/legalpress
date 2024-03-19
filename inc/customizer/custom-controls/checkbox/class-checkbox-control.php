@@ -60,8 +60,8 @@ class LegalBlow_Checkbox_Control extends WP_Customize_Control {
 	 * @return void
 	 */
 	public function enqueue() {
-        wp_enqueue_script( 'legalblow-cbx-control-scripts', get_parent_theme_file_uri( 'inc/customizer/custom-controls/checkbox/checkbox' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js' ), array( 'jquery' ), '1.0.0', true );
-        wp_enqueue_style( 'legalblow-cbx-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/checkbox/checkbox' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.css', array(), '1.0', 'all' ));
+        wp_enqueue_script( 'legalblow-cbx-control-scripts', get_parent_theme_file_uri( 'inc/customizer/custom-controls/checkbox/checkbox.js' ), array( 'jquery' ), '1.0.0', true );
+        wp_enqueue_style( 'legalblow-cbx-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/checkbox/checkbox.css', array(), '1.0', 'all' ));
 	}
 	
 	/**

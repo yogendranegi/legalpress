@@ -1,21 +1,11 @@
-<?php 
+<?php
 /**
  * 
  * @package legalblow
  */
 
 
- /**
-  * Load Social Icons Widget
-  */
-  require get_template_directory(). 'inc/widgets/social-icons-widget.php';
-
-  /**
-   * Load Latest Posts Widget
-   */
-  require get_template_directory() . '/inc/widgets/latest-posts-widget.php';
-
-  /**
-   * Load Top Category Widget
-   */
-  require get_template_directory() . '/inc/widgets/top-categories-widget.php';
+/**
+ * Load Blog Section Widget
+ */
+require get_template_directory() . '/inc/widgets/blog-section-widget.php';

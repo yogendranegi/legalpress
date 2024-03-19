@@ -272,3 +272,18 @@ function legalblow_prevent_plugins_redirect() {
     delete_transient( 'elementor_activation_redirect');
 }
 add_action('admin_init', 'legalblow_prevent_plugins_redirect');
+
+
+
+/**
+ * Check if woocommerce is activated.
+ */
+if ( ! function_exists( 'legalblow_is_active_woocommerce' ) ) {
+    function legalblow_is_active_woocommerce() {
+        if ( class_exists( 'WooCommerce' ) ) :
+            return true;
+        else :
+            return false;
+        endif;
+    }
+}

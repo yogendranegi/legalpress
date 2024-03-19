@@ -35,8 +35,8 @@ class LegalBlow_Slider_Control extends WP_Customize_Control {
 	 * @return void
 	 */
 	public function enqueue() {
-        wp_enqueue_script( 'legalblow-slider-control-scripts', get_parent_theme_file_uri( 'inc/customizer/custom-controls/slider/slider' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js' ), array( 'jquery' ), '1.0.0', true );
-        wp_enqueue_style( 'legalblow-slider-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/slider/slider' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.css', array(), '1.0', 'all' ));
+        wp_enqueue_script( 'legalblow-slider-control-scripts', get_parent_theme_file_uri( 'inc/customizer/custom-controls/slider/slider.js' ), array( 'jquery' ), '1.0.0', true );
+        wp_enqueue_style( 'legalblow-slider-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/slider/slider.css', array(), '1.0', 'all' ));
 	}
 	
 	/**

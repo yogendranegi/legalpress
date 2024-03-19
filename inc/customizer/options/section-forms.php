@@ -61,44 +61,6 @@ function legalblow_customizer_forms_register( $wp_customize ) {
         )
     ));
 
-    // Title label
-	$wp_customize->add_setting( 
-		'legalblow_label_forms_search_styles', 
-		array(
-		    'sanitize_callback' => 'legalblow_sanitize_title',
-		) 
-	);
-
-	$wp_customize->add_control( 
-		new LegalBlow_Title_Info_Control( $wp_customize, 'legalblow_label_forms_search_styles', 
-		array(
-		    'label'       => esc_html__( 'Search Settings', 'legalblow' ),
-		    'section'     => 'legalblow_forms_settings',
-		    'type'        => 'legalblow-title',
-		    'settings'    => 'legalblow_label_forms_search_styles',
-		) 
-	));
-
-    // Add Search placeholder text
-    $wp_customize->add_setting(
-        'legalblow_forms_search_placeholder_text',
-        array(
-            'type' => 'theme_mod',
-            'default'           => esc_html__( 'Search here', 'legalblow' ),
-            'sanitize_callback' => 'legalblow_sanitize_text_field',
-        )
-    );
-
-    $wp_customize->add_control(
-        'legalblow_forms_search_placeholder_text',
-        array(
-            'settings'      => 'legalblow_forms_search_placeholder_text',
-            'section'       => 'legalblow_forms_settings',
-            'type'          => 'textbox',
-            'label'         => esc_html__( 'Search Placeholder Text', 'legalblow' ),
-        )
-    );
-
 }
 endif;
 

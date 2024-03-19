@@ -45,9 +45,6 @@ get_template_part( 'inc/customizer/options/section-header' );
 //color settings
 get_template_part( 'inc/customizer/options/section-color' );
 
-//layout settings
-get_template_part( 'inc/customizer/options/section-layout' );
-
 //page settings
 get_template_part( 'inc/customizer/options/section-page' );
 
@@ -84,10 +81,10 @@ get_template_part( 'inc/customizer/data-sanitization' );
  */
 if ( ! function_exists( 'legalblow_enqueue_customizer_stylesheets' ) ) :
 function legalblow_enqueue_customizer_stylesheets() {
-    wp_register_style( 'legalblow-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/customizer' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.css', NULL, NULL, 'all' );
+    wp_register_style( 'legalblow-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/css/customizer.css', NULL, NULL, 'all' );
     wp_enqueue_style( 'legalblow-customizer-css' );
 
-    wp_enqueue_script( 'legalblow-customizer-js', get_template_directory_uri(). '/inc/customizer/assets/js/customizer' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.js' , array('jquery'), false );
+    wp_enqueue_script( 'legalblow-customizer-js', get_template_directory_uri(). '/inc/customizer/assets/js/customizer.js' , array('jquery'), false );
 }
 endif;
 add_action( 'customize_controls_print_styles', 'legalblow_enqueue_customizer_stylesheets' );

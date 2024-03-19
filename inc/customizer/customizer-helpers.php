@@ -81,22 +81,10 @@ function legalblow_header_menu_button_enable( $control ) {
 
 
 /**
- * Check if the header transparent enable or not
- */
-function legalblow_header_transparent_enable( $control ) {
-	if ( $control->manager->get_setting( 'legalblow_enable_header_transparent' )->value() == true ) :
-		return true;
-	else :
-		return false;
-	endif;
-}
-
-
-/**
  * Check if the header transparent enable & page title disable
  */
 function legalblow_header_transparent_enable_page_title_disable( $control ) {
-	if ( $control->manager->get_setting( 'legalblow_enable_header_transparent' )->value() == true && $control->manager->get_setting( 'legalblow_enable_page_title' )->value() == false  ) :
+	if ( $control->manager->get_setting( 'legalblow_enable_page_title' )->value() == false  ) :
 		return true;
 	else :
 		return false;

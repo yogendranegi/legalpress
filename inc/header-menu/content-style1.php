@@ -106,8 +106,12 @@
 						<div class="topbar-right">
 							<div class="topbar-content">
 								<div class="call-us-section">
-									<span class="call-us"><i class="fas fa-phone-alt"></i>  <?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_call_us_label','Call Us:')) ?></span><span class="call-us-text"><?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_call_us_text','123-456-7890')) ?></span>
-									<span class="email"><i class="fas fa-envelope"></i><?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_email_label','Email:')) ?></span><span class="email-text"><?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_email_text','info@example.com')) ?></span>
+									<div class="phone">
+										<span class="call-us"><i class="fas fa-phone-alt"></i>  <?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_call_us_label','Call Us:')) ?></span><span class="call-us-text"><?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_call_us_text','123-456-7890')) ?></span>
+									</div>
+									<div class="email">
+										<span class="email"><i class="fas fa-envelope"></i><?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_email_label','Email:')) ?></span><span class="email-text"><?php echo esc_html(get_theme_mod( 'legalblow_header_topbar_email_text','info@example.com')) ?></span>
+									</div>
 								</div>
 							</div>
 						</div>

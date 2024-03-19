@@ -41,7 +41,7 @@ function legalblow_customizer_color_register( $wp_customize ) {
         'legalblow_site_primary_color',
         array(
             'type' => 'theme_mod',
-            'default'           => '#8224e3',
+            'default'           => '#1e5154',
             'sanitize_callback' => 'sanitize_hex_color'
         )
     );
@@ -63,7 +63,7 @@ function legalblow_customizer_color_register( $wp_customize ) {
         'legalblow_site_secondary_color',
         array(
             'type' => 'theme_mod',
-            'default'           => '#4f00d8',
+            'default'           => '#397b7e',
             'sanitize_callback' => 'sanitize_hex_color'
         )
     );

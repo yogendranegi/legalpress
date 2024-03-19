@@ -13,11 +13,11 @@
  */
 
 get_header(); 
-// legalblow_before_title();
+legalblow_before_title();
 if(true===get_theme_mod( 'legalblow_enable_page_title',true)) :
 	do_action('legalblow_get_page_title',false,false,false,false);
 endif;
-// legalblow_after_title();
+legalblow_after_title();
 
 ?>
 <div class="page">

@@ -36,7 +36,7 @@ class LegalBlow_Radio_Image_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
         wp_enqueue_script( 'jquery-ui-button' );
-        wp_enqueue_style( 'legalblow-radio-image-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/radio-images/radio-image' . ( ( LEGALBLOW_MINIFY ) ? '.min' : '' ) . '.css', array(), '1.0', 'all' ));
+        wp_enqueue_style( 'legalblow-radio-image-control-css', get_parent_theme_file_uri( 'inc/customizer/custom-controls/radio-images/radio-image.css', array(), '1.0', 'all' ));
 	}
 	
 	/**

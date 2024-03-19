@@ -77,30 +77,6 @@ function legalblow_customizer_footer_register( $wp_customize ) {
     ));
 
 
-    //Copyrights spacing
-    $wp_customize->add_setting( 
-        'legalblow_footer_copyrights_spacing', 
-        array(
-            'default' => 30,
-            'sanitize_callback' => 'absint',
-        ) 
-    );
-
-    $wp_customize->add_control( 
-        new LegalBlow_Slider_Control( $wp_customize, 'legalblow_footer_copyrights_spacing', 
-        array(
-            'label' => esc_html__( 'Copyrights Spacing(px)','legalblow' ),
-            'description' => esc_html__( 'Default is 30','legalblow' ),
-            'section' => 'legalblow_footer_settings',
-            'input_attrs' => array(
-                'min' => 0, 
-                'max' => 100,
-                'step' => 1,
-            ),
-        )
-    ));
-
-
     // Title label
     $wp_customize->add_setting( 
         'legalblow_label_footer_columns_title', 
@@ -225,6 +201,28 @@ function legalblow_customizer_footer_register( $wp_customize ) {
         'label'      => esc_html__( 'Footer Links Color', 'legalblow' ),
         'section'    => 'legalblow_footer_settings',
         'settings'   => 'legalblow_footer_links_color',
+        ) )
+    );
+
+
+     // Footer Headings Color
+    $wp_customize->add_setting(
+        'legalblow_footer_headings_color',
+        array(
+            'type' => 'theme_mod',
+            'default'           => '#b3b3b3',
+            'sanitize_callback' => 'sanitize_hex_color'
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+        $wp_customize,
+        'legalblow_footer_headings_color',
+        array(
+        'label'      => esc_html__( 'Footer Headings Color', 'legalblow' ),
+        'section'    => 'legalblow_footer_settings',
+        'settings'   => 'legalblow_footer_headings_color',
         ) )
     );
 
