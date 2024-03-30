@@ -7,8 +7,8 @@
 
 function legalblow_dynamic_css_stylesheet() {
 
-    $logo_width=get_theme_mod('legalblow_logo_width_settings',200);
-    $logo_spacing=get_theme_mod('legalblow_logo_spacing_settings',12);
+    $logo_width= get_theme_mod('legalblow_logo_width_settings',200);
+    $logo_spacing= get_theme_mod('legalblow_logo_spacing_settings',12);
 
     $link_color= sanitize_hex_color(get_theme_mod( 'legalblow_link_color','#555' ));
     $link_hover_color= sanitize_hex_color(get_theme_mod( 'legalblow_link_hover_color','#000' ));
@@ -17,21 +17,21 @@ function legalblow_dynamic_css_stylesheet() {
 
     $padding= get_theme_mod('legalblow_menu_items_spacing',16);
     $margin_top= get_theme_mod('legalblow_menu_spacing_from_top',0);
-    $margin_bottom=get_theme_mod('legalblow_menu_spacing_from_bottom',30);
-    $vertical_spacing=get_theme_mod('legalblow_header_toggle_menu_spacing',0);
-    $button_height=get_theme_mod('legalblow_header_toggle_menu_btn_height',2);
-    $button_padding=get_theme_mod('legalblow_header_toggle_menu_btn_padding',2);
+    $margin_bottom= get_theme_mod('legalblow_menu_spacing_from_bottom',30);
+    $vertical_spacing= get_theme_mod('legalblow_header_toggle_menu_spacing',0);
+    $button_height= get_theme_mod('legalblow_header_toggle_menu_btn_height',2);
+    $button_padding= get_theme_mod('legalblow_header_toggle_menu_btn_padding',2);
 
-    $menu_color=get_theme_mod('legalblow_transparent_header_menu_color','#135E96');
+    $menu_color= get_theme_mod('legalblow_transparent_header_menu_color','#135E96');
 
 
     $bg_color= sanitize_hex_color(get_theme_mod( 'legalblow_header_menu_last_button_bg_color','#555' ));
     $text_color= sanitize_hex_color(get_theme_mod( 'legalblow_header_menu_last_button_content_color','#c29852' ));
 
 
-    $primary_color=get_theme_mod( 'legalblow_site_primary_color','#8224E3' );
+    $primary_color= get_theme_mod( 'legalblow_site_primary_color','#8224E3' );
 
-    $layout_width=get_theme_mod( 'legalblow_layout_content_width_settings','1170');
+    $layout_width= get_theme_mod( 'legalblow_layout_content_width_settings','1170');
 
     $page_content_spacing_top_title= absint(get_theme_mod( 'legalblow_page_content_spacing_top_title','70' ));
 
@@ -39,9 +39,9 @@ function legalblow_dynamic_css_stylesheet() {
 
     
 
-    $footer_copyright_text=get_theme_mod('legalblow_footer_copyrights_spacing',30);
+    $footer_copyright_text= get_theme_mod('legalblow_footer_copyrights_spacing',30);
 
-    $footer_content_spacing=get_theme_mod('legalblow_footer_content_spacing',0);
+    $footer_content_spacing= get_theme_mod('legalblow_footer_content_spacing',0);
     $footer_links_color= sanitize_hex_color(get_theme_mod( 'legalblow_footer_links_color','#b3b3b3' ));
     $footer_bg_color= sanitize_hex_color(get_theme_mod( 'legalblow_footer_bg_color','#0340b2' ));
     $footer_content_color= sanitize_hex_color(get_theme_mod( 'legalblow_footer_content_color','#dbdbdb' ));

@@ -760,7 +760,7 @@ input[type="date"],select {
     border-radius:4px;
     color:#a1a1a1;
     height:50px;
-    padding:0px 10px 0 20px;
+    padding:0px 5px 0 10px;
     width:50%;
     font-weight:400;
 }
@@ -1571,6 +1571,7 @@ aside h3 {
 
 aside > div {
     margin-bottom:50px;
+    color: white;
 }
 
 aside ul li {
@@ -1596,7 +1597,8 @@ aside ul li {
     text-decoration:underline;
 }
 
-#sidebar-wrapper {
+.blog #sidebar-wrapper,
+.single-post #sidebar-wrapper {
     background: #397b7e;
     padding: 20px;
 }
@@ -2064,6 +2066,8 @@ Footer
 footer#footer {
     background: #cecece;
     padding-top: 50px;
+    color: white;
+    background-color: #397B7E;
 }
 
 footer li {
@@ -2228,6 +2232,7 @@ ol.children li {
 
 .widget-column a {
     text-decoration:underline;
+    color: white;
 }
 
 article.recent-blog-widget .content h3 a,article.recent-blog-widget .content .meta a {
@@ -2468,6 +2473,8 @@ Sidebar-wrapper box layout
 
 .widget-title {
     border-bottom:1px solid #ccc;
+    color: white;
+    font-weight: 600;
 }
 
 #blog-section .main-title {
