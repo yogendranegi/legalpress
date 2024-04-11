@@ -90,7 +90,7 @@
                             <div class="post-categories">
                             	<h5><?php esc_html_e('Category: ','legalblow'); ?></h5>
                                 <?php 
-                                // legalblow_category(); 
+                                    legalblow_category(); 
                                 ?>
                             </div>
                         <?php
@@ -100,5 +100,5 @@
         </div>
     </article>
     <?php 
-    // esc_html(legalblow_single_post_after_content($post->ID));
+    esc_html(legalblow_single_post_after_content($post->ID));
      ?>

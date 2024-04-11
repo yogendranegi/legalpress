@@ -52,7 +52,7 @@ get_template_part( 'inc/customizer/options/section-layout' );
 get_template_part( 'inc/customizer/options/section-page' );
 
 //sticky header settings
-get_template_part( 'inc/customizer/options/section-stickyheader' );
+//get_template_part( 'inc/customizer/options/section-stickyheader' );
 
 //blog settings
 get_template_part( 'inc/customizer/options/section-blog' );

@@ -35,7 +35,7 @@
 							$alt_logo=esc_url(get_theme_mod('legalblow_sticky_logo'));
 								if(!empty($alt_logo)){
 									?>
-										<a id="logo-alt" class="logo-alt" href="<?php echo esc_url(home_url('/'));?>"> <img src="<?php echo esc_url(get_theme_mod('legalblow_sticky_logo'));?>" alt="logo"></a>
+										<a id="logo-alt" class="logo-alt" href="<?php echo esc_url(home_url('/'));?>"> <img src="<?php echo esc_url(get_theme_mod('legalblow_sticky_logo'));?>" alt="<?php esc_attr_e( 'logo', 'legalblow' ); ?>"></a>
 									<?php
 								}
 							?>
@@ -144,6 +144,7 @@
 									?>
 								</div>
 							</nav>
+							<?php do_action('legalblow_woocommerce_show_cart'); ?>
 						</div>
 					</div>
 				</div>

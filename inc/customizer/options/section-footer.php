@@ -100,52 +100,6 @@ function legalblow_customizer_footer_register( $wp_customize ) {
         )
     ));
 
-
-    // Title label
-    $wp_customize->add_setting( 
-        'legalblow_label_footer_columns_title', 
-        array(
-            'sanitize_callback' => 'legalblow_sanitize_title',
-        ) 
-    );
-
-    $wp_customize->add_control( 
-        new LegalBlow_Title_Info_Control( $wp_customize, 'legalblow_label_footer_columns_title', 
-        array(
-            'label'       => esc_html__( 'Footer Columns', 'legalblow' ),
-            'section'     => 'legalblow_footer_settings',
-            'type'        => 'legalblow-title',
-            'settings'    => 'legalblow_label_footer_columns_title',
-        ) 
-    ));
-
-    // select footer columns
-    $wp_customize->add_setting( 
-        'legalblow_footer_widgets', 
-        array(
-            'default'           => '4',
-            'type'              => 'theme_mod',
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'legalblow_sanitize_select',
-        ) 
-    );
-
-    $wp_customize->add_control( 
-        new LegalBlow_Text_Radio_Control( $wp_customize, 'legalblow_footer_widgets', 
-        array(
-            'label'       => esc_html__( 'Choose Footer Columns', 'legalblow' ),
-            'section'     => 'legalblow_footer_settings',
-            'type'        => 'legalblow-text-radio',
-            'settings'    => 'legalblow_footer_widgets',
-            'choices' => array(
-                '1' => esc_html__( '1 Column','legalblow' ), 
-                '2' => esc_html__( '2 Columns','legalblow' ),
-                '3' => esc_html__( '3 Columns','legalblow' ),
-                '4' => esc_html__( '4 Columns','legalblow' ),
-            ),
-        )
-    ));
-
     // Title label
     $wp_customize->add_setting( 
         'legalblow_label_footer_color_settings', 

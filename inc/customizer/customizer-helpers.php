@@ -105,30 +105,6 @@ function legalblow_header_transparent_enable_page_title_disable( $control ) {
 
 
 /**
- * Check if the sticky header enable or not
- */
-function legalblow_stickyheader_enable( $control ) {
-	if ( $control->manager->get_setting( 'legalblow_enable_stickyheader' )->value() == true ) :
-		return true;
-	else :
-		return false;
-	endif;
-}
-
-
-/**
- * Check if the sticky header enable and sticky header logo enable or not
- */
-function legalblow_stickyheader_enable_sticylogo_enable( $control ) {
-	if ( $control->manager->get_setting( 'legalblow_enable_stickyheader' )->value() == true && $control->manager->get_setting( 'legalblow_enable_logo_stickyheader' )->value() == true  ) :
-		return true;
-	else :
-		return false;
-	endif;
-}
-
-
-/**
  * Check if the page title enable and image overlay enable or not
  */
 function legalblow_page_title_enable_overlay_enable( $control ) {

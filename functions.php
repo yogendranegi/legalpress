@@ -273,13 +273,6 @@ function legalblow_scripts() {
     // Main js
 	wp_enqueue_script( 'legalblow-script', get_template_directory_uri() . '/js/main.js',array('jquery'), wp_get_theme()->get('Version'), true );
 
-
-	// Sticky Header js
-    if ( get_theme_mod( 'legalblow_enable_stickyheader', false ) ) :
-        wp_enqueue_script( 'legalblow-sticky', get_template_directory_uri() . '/js/sticky.js', array(), wp_get_theme()->get('Version'), true );
-    endif;
-
-
 	// Preloader js
 	if(get_theme_mod( 'legalblow_enable_preloader',false)) :
 		wp_enqueue_script( 'legalblow-preloader-script', get_template_directory_uri() . '/js/preloader.js',array(), 	wp_get_theme()->get('Version'), true );
@@ -380,3 +373,5 @@ require get_parent_theme_file_path() . '/inc/template-functions.php';
 require get_parent_theme_file_path() . '/inc/template-tags.php'; 
 
 require get_parent_theme_file_path() . '/inc/customizer/customizer.php'; 
+
+require get_parent_theme_file_path() . '/inc/template-hooks.php'; 

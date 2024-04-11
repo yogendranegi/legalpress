@@ -12,7 +12,7 @@
   */
 if ( ! function_exists( 'legalblow_before_title' ) ) :
 function legalblow_before_title() {
-    do_action('legalpres_before_title');
+    do_action('legalblow_before_title');
 }
 endif;
 
@@ -20,8 +20,8 @@ endif;
  * After title meta hook
  */
 if ( ! function_exists( 'legalblow_after_title' ) ) :
-function legalblow_before_title() {
-    do_action('legalblow_before_title');
+function legalblow_after_title() {
+    do_action('legalblow_after_title');
 }
 endif;
 
@@ -60,3 +60,21 @@ function legalblow_single_post_after_content($postID) {
     do_action('legalblow_single_post_after_content',$postID);
 }
 endif;
+
+/**
+ * WooCommerce show cart
+ */
+if ( ! function_exists( 'legalblow_woocommerce_show_cart' ) ) :
+	function legalblow_woocommerce_show_cart() {
+		do_action('legalblow_woocommerce_show_cart');
+	}
+endif;
+	
+/**
+ * Single post content after meta hook
+ */
+if ( ! function_exists( 'legalblow_single_post_after_content' ) ) :
+	function legalblow_single_post_after_content($postID) {
+		do_action('legalblow_single_post_after_content',$postID);
+	}
+	endif;
